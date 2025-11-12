@@ -229,12 +229,45 @@ nav {
 }
 
 .menu-toggle {
-    display: none;
-    font-size: 1.5rem;
+    display: none; /* kept hidden on desktop */
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
     cursor: pointer;
+    position: relative;
     color: var(--accent);
+    -webkit-tap-highlight-color: transparent;
 }
 
+/* show a vertical ellipsis (three stacked dots) */
+.menu-toggle::before {
+    content: "⋮";
+    font-size: 1.6rem;
+    line-height: 44px;
+    color: var(--accent);
+    display: block;
+    text-align: center;
+}
+
+/* hide any existing hamburger icon inside the toggle (if markup uses an <i> element) */
+.menu-toggle .fa-bars,
+.menu-toggle .fas.fa-bars,
+.menu-toggle .fa,
+menu-toggle svg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transform: none;
+        z-index: 1100;
+    }
+}
 
 /* ============================= */
 /*        CLICKABLE PHONE & EMAIL */
@@ -1133,6 +1166,11 @@ footer {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transform: none;
+        z-index: 1100;
     }
     
     .nav-links {
