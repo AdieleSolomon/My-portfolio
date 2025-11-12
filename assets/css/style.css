@@ -860,21 +860,37 @@ nav {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transform: none;
     }
     
     nav {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        position: relative;
     }
     
     .logo-container {
         align-items: center;
         text-align: center;
+        flex-direction: column;
+        gap: 10px;
     }
     
     .logo {
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 1.4rem;
+    }
+
+    .logo span {
+        display: block;
+        text-align: center;
     }
     
     .tagline {
@@ -906,19 +922,43 @@ nav {
     
     h1 {
         font-size: 2.2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
     
     h2 {
         font-size: 1.8rem;
     }
     
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin: 20px 0;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+    
     .hero-btns {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
     
     .hero-btns .btn {
         width: 200px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
     }
     
     .project-links {
@@ -932,13 +972,25 @@ nav {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+
     .hero h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .hero p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        padding: 0 5px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 180px;
     }
 
     .education-container {
@@ -947,6 +999,10 @@ nav {
     
     .education-item {
         padding: 20px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
     }
 }
 
