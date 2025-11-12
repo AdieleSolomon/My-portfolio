@@ -133,7 +133,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    position: relative;
 }
 
 .logo-container {
@@ -234,10 +233,6 @@ nav {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--accent);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 
@@ -1136,28 +1131,29 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
     nav {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        transform: none;
-    }
-
+    
     .logo-container {
         align-items: center;
         text-align: center;
     }
-
+    
+    .logo {
+        justify-content: center;
+    }
+    
     .tagline {
         text-align: center;
     }
-
+    
     .nav-links {
         position: fixed;
         top: 70px;
