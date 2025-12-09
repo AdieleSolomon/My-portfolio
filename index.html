@@ -1,467 +1,687 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="cNif3_RpinazDFWrunZlfPVG1DqiIwMQ0AKZOj5D_lE" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="cNif3_RpinazDFWrunZlfPVG1DqiIwMQ0AKZOj5D_lE" />
     <title>Solomon Adiele | Full-Stack Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Add EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <!-- Background Pattern -->
     <div class="background-pattern"></div>
 
     <!-- WhatsApp Modal -->
     <div class="whatsapp-modal" id="whatsappModal">
-        <div class="whatsapp-modal-content">
-            <h3>Get My CV Document</h3>
-            <p>Contact me on WhatsApp to receive my complete CV document</p>
-            <a href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20would%20like%20to%20get%20your%20CV%20document" 
-                class="whatsapp-number" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> 08069383370
-            </a>
-            <p style="font-size: 0.9rem; margin-top: 15px; color: #888;">
-                Click the number above to message me directly on WhatsApp
-            </p>
-            <button class="modal-close" onclick="closeWhatsAppModal()">Close</button>
-        </div>
+      <div class="whatsapp-modal-content">
+        <h3>Get My CV Document</h3>
+        <p>Contact me on WhatsApp to receive my complete CV document</p>
+        <a
+          href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20would%20like%20to%20get%20your%20CV%20document"
+          class="whatsapp-number"
+          target="_blank"
+          rel="noopener">
+          <i class="fab fa-whatsapp"></i> 08069383370
+        </a>
+        <p style="font-size: 0.9rem; margin-top: 15px; color: #888">
+          Click the number above to message me directly on WhatsApp
+        </p>
+        <button class="modal-close" onclick="closeWhatsAppModal()">
+          Close
+        </button>
+      </div>
     </div>
 
     <!-- Header & Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo-container">
-                    <div class="logo">
-                        <div class="name-stack">
-                            <div class="name-line">SOLOMON <span>ADIELE</span></div>
-                        </div>
-                    </div>
-                    <div class="tagline">Full-Stack Developer & IT Professional</div>
-                </div>
-                
-                <!-- Three-line button -->
-                <button class="three-line-btn" id="threeLineBtn" title="Toggle Menu">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </button>
+      <div class="container">
+        <nav>
+          <div class="logo-container">
+            <div class="logo">
+              <div class="name-stack">
+                <div class="name-line">SOLOMON <span>ADIELE</span></div>
+              </div>
+            </div>
+            <div class="tagline">Full-Stack Developer & IT Professional</div>
+          </div>
 
-                <!-- Side panel -->
-                <div class="side-panel" id="sidePanel">
-                    <div class="side-panel-header">
-                        <div class="side-panel-title">Navigation</div>
-                        <button class="side-panel-close" id="sidePanelClose">&times;</button>
-                    </div>
-                    <div class="side-panel-content">
-                        <a href="#home" class="side-panel-option">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                        <a href="#about" class="side-panel-option">
-                            <i class="fas fa-user"></i> About
-                        </a>
-                        <a href="#skills" class="side-panel-option">
-                            <i class="fas fa-code"></i> Skills
-                        </a>
-                        <a href="#experience" class="side-panel-option">
-                            <i class="fas fa-briefcase"></i> Experience
-                        </a>
-                        <a href="#education" class="side-panel-option">
-                            <i class="fas fa-graduation-cap"></i> Education
-                        </a>
-                        <a href="#projects" class="side-panel-option">
-                            <i class="fas fa-project-diagram"></i> Projects
-                        </a>
-                        <a href="#contact" class="side-panel-option" style="background: rgba(255, 215, 0, 0.15);">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </div>
-                </div>
-                
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+          <!-- Three-line button -->
+          <button class="three-line-btn" id="threeLineBtn" title="Toggle Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </button>
+
+          <!-- Side panel -->
+          <div class="side-panel" id="sidePanel">
+            <div class="side-panel-header">
+              <div class="side-panel-title">Navigation</div>
+              <button class="side-panel-close" id="sidePanelClose">
+                &times;
+              </button>
+            </div>
+            <div class="side-panel-content">
+              <a href="#home" class="side-panel-option">
+                <i class="fas fa-home"></i> Home
+              </a>
+              <a href="#about" class="side-panel-option">
+                <i class="fas fa-user"></i> About
+              </a>
+              <a href="#skills" class="side-panel-option">
+                <i class="fas fa-code"></i> Skills
+              </a>
+              <a href="#experience" class="side-panel-option">
+                <i class="fas fa-briefcase"></i> Experience
+              </a>
+              <a href="#education" class="side-panel-option">
+                <i class="fas fa-graduation-cap"></i> Education
+              </a>
+              <a href="#projects" class="side-panel-option">
+                <i class="fas fa-project-diagram"></i> Projects
+              </a>
+              <a
+                href="#contact"
+                class="side-panel-option"
+                style="background: rgba(255, 215, 0, 0.15)">
+                <i class="fas fa-envelope"></i> Contact
+              </a>
+            </div>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1>Solomon Chimereucheya Adiele</h1>
-            <p>A Full-Stack Developer & IT Professional</p>
-            <p>Passionate about creating efficient digital solutions and leveraging technology to solve real-world problems.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="#contact" class="btn btn-primary">Contact Me</a>
-            </div>
+      <div class="container">
+        <h1>Solomon Chimereucheya Adiele</h1>
+        <p>A Full-Stack Developer & IT Professional</p>
+        <p>
+          Passionate about creating efficient digital solutions and leveraging
+          technology to solve real-world problems.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <!-- Profile image with fallback -->
-                    <img src="./assets/images/profile1.jpg" alt="Solomon Adiele - Full-Stack Developer" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 5rem; color: #777;\'></i>'">
-                </div>
-                <div class="about-text">
-                    <h3>Full-Stack Developer</h3>
-                    <p>I am a dedicated and passionate full-stack developer with a strong degree in computer science. My career objective is to work effectively to contribute to organizational growth and development through my skills, experience, honesty, dedication, integrity, and team spirit.</p>
-                    
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <span class="info-label">Name:</span>
-                            <span>Solomon Chimereucheya Adiele</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span>
-                            <span><a href="mailto:solomonadiele1@gmail.com" class="clickable-email" title="Click to send email">solomonadiele1@gmail.com</a></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Phone:</span>
-                            <span>
-                                <a href="tel:08069383370" class="clickable-phone" title="Click to call">08069383370</a>, 
-                                <a href="tel:08127890779" class="clickable-phone" title="Click to call">08127890779</a>
-                            </span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location:</span>
-                            <span>Abia State, Nigeria</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Updated: Two buttons for View CV and Download CV -->
-                    <div class="cv-buttons">
-                        <a href="Solomon-Adiele-CV.html" class="btn">
-                            <i class="fas fa-eye"></i> View CV
-                        </a>
-                        <button class="btn btn-secondary" onclick="openWhatsAppModal()">
-                            <i class="fas fa-download"></i> Download CV
-                        </button>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-img">
+            <!-- Profile image with fallback -->
+            <img
+              src="./assets/images/profile1.jpg"
+              alt="Solomon Adiele - Full-Stack Developer"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 5rem; color: #777;\'></i>'" />
+          </div>
+          <div class="about-text">
+            <h3>Full-Stack Developer</h3>
+            <p>
+              I am a dedicated and passionate full-stack developer with a strong
+              degree in computer science. My career objective is to work
+              effectively to contribute to organizational growth and development
+              through my skills, experience, honesty, dedication, integrity, and
+              team spirit.
+            </p>
+
+            <div class="personal-info">
+              <div class="info-item">
+                <span class="info-label">Name:</span>
+                <span>Solomon Chimereucheya Adiele</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email:</span>
+                <span
+                  ><a
+                    href="mailto:solomonadiele1@gmail.com"
+                    class="clickable-email"
+                    title="Click to send email"
+                    >solomonadiele1@gmail.com</a
+                  ></span
+                >
+              </div>
+              <div class="info-item">
+                <span class="info-label">Phone:</span>
+                <span>
+                  <a
+                    href="tel:08069383370"
+                    class="clickable-phone"
+                    title="Click to call"
+                    >08069383370</a
+                  >,
+                  <a
+                    href="tel:08127890779"
+                    class="clickable-phone"
+                    title="Click to call"
+                    >08127890779</a
+                  >
+                </span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Location:</span>
+                <span>Abia State, Nigeria</span>
+              </div>
             </div>
+
+            <!-- Updated: Two buttons for View CV and Download CV -->
+            <div class="cv-buttons">
+              <a href="Solomon-Adiele-CV.html" class="btn">
+                <i class="fas fa-eye"></i> View CV
+              </a>
+              <button class="btn btn-secondary" onclick="openWhatsAppModal()">
+                <i class="fas fa-download"></i> Download CV
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-     <!-- Education Section -->
+    <!-- Education Section -->
     <section id="education" class="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-container">
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Full-Stack Developer</h3>
-                    <p class="education-year">2025</p>
-                    <p>Babcock University, Ilishan Remo, Ogun State</p>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>BSc Computer Science</h3>
-                    <p class="education-year">2017 - 2020</p>
-                    <p>Clifford University, Ihie, Abia State</p>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Diploma in Computer Training</h3>
-                    <p class="education-year">2016</p>
-                    <p>Ever Great Computers, Omoba, Abia State</p>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <h3>SSCE</h3>
-                    <p class="education-year">2009 - 2015</p>
-                    <p>Lucy Memorial Secondary School, Amiri, Abia State</p>
-                </div>
+      <div class="container">
+        <h2>Education</h2>
+        <div class="education-container">
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
             </div>
+            <h3>Full-Stack Developer</h3>
+            <p class="education-year">2025</p>
+            <p>Babcock University, Ilishan Remo, Ogun State</p>
+          </div>
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3>BSc Computer Science</h3>
+            <p class="education-year">2017 - 2020</p>
+            <p>Clifford University, Ihie, Abia State</p>
+          </div>
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Diploma in Computer Training</h3>
+            <p class="education-year">2016</p>
+            <p>Ever Great Computers, Omoba, Abia State</p>
+          </div>
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <h3>SSCE</h3>
+            <p class="education-year">2009 - 2015</p>
+            <p>Lucy Memorial Secondary School, Amiri, Abia State</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Here are some of the projects I've worked on. I'm continuously expanding my portfolio with new and exciting developments.</p>
-            
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="system">System Tools</button>
-                <button class="filter-btn" data-filter="design">Design Solutions</button>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 - Web Development -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img" style="background-color: rgba(52, 152, 219, 0.2);">
-                        <i class="fas fa-laptop-code" style="font-size: 3rem; color: #3498db;"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Responsive Portfolio Website</h3>
-                        <p>A fully responsive personal portfolio website built with HTML, CSS, and JavaScript.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html" class="project-link github-link"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 - System Tools -->
-                <div class="project-card" data-category="system">
-                    <div class="project-img" style="background-color: rgba(44, 62, 80, 0.2);">
-                        <i class="fas fa-desktop" style="font-size: 3rem; color: #2c3e50;"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>System Optimization Tool</h3>
-                        <p>Satisfactory knowledge in utility applications for system formatting, Windows installation and activation.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Windows formatting/upgrading</span>
-                            <span class="project-tag">System Tools</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 - Interior Design (Updated with remote work) -->
-                <div class="project-card" data-category="design web">
-                    <div class="project-img" style="background-color: rgba(139, 115, 85, 0.2);">
-                        <i class="fas fa-couch" style="font-size: 3rem; color: #8B7355;"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Pure Pleasure Interior Design Website</h3>
-                        <p>A comprehensive interior design website developed remotely, showcasing modern design solutions with interactive galleries and contact features.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">UI/UX Design</span>
-                            <span class="project-tag">Remote Development</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/AdieleSolomon/Interior-design/blob/main/index.html" class="project-link github-link"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>My Projects</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+          Here are some of the projects I've worked on. I'm continuously
+          expanding my portfolio with new and exciting developments.
+        </p>
 
-                <!-- Project 4 - Remote Work Project -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img" style="background-color: rgba(52, 152, 219, 0.2);">
-                        <i class="fas fa-globe" style="font-size: 3rem; color: #3498db;"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>ELASTIC TOURS LTD - Chartered Tour Operator</h3>
-                        <p>Developed a web application remotely for ELASTIC TOURS LTD, Your Premier Chartered Tour Operator for Unforgettable Experiences</p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">Real-time Features</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/AdieleSolomon/Interior-design/blob/main/index.html" class="project-link github-link"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <p>More projects coming soon! I'm currently working on several exciting developments.</p>
-            </div>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+          <button class="filter-btn" data-filter="system">System Tools</button>
+          <button class="filter-btn" data-filter="design">
+            Design Solutions
+          </button>
         </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 - Web Development -->
+          <div class="project-card" data-category="web">
+            <div
+              class="project-img"
+              style="background-color: rgba(52, 152, 219, 0.2)">
+              <i
+                class="fas fa-laptop-code"
+                style="font-size: 3rem; color: #3498db"></i>
+            </div>
+            <div class="project-content">
+              <h3>Responsive Portfolio Website</h3>
+              <p>
+                A fully responsive personal portfolio website built with HTML,
+                CSS, and JavaScript.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link demo-link"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+                <a
+                  href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html"
+                  class="project-link github-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - System Tools -->
+          <div class="project-card" data-category="system">
+            <div
+              class="project-img"
+              style="background-color: rgba(44, 62, 80, 0.2)">
+              <i
+                class="fas fa-desktop"
+                style="font-size: 3rem; color: #2c3e50"></i>
+            </div>
+            <div class="project-content">
+              <h3>System Optimization Tool</h3>
+              <p>
+                Satisfactory knowledge in utility applications for system
+                formatting, Windows installation and activation.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Windows formatting/upgrading</span>
+                <span class="project-tag">System Tools</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link demo-link"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 - Interior Design (Updated with remote work) -->
+          <div class="project-card" data-category="design web">
+            <div
+              class="project-img"
+              style="background-color: rgba(139, 115, 85, 0.2)">
+              <i
+                class="fas fa-couch"
+                style="font-size: 3rem; color: #8b7355"></i>
+            </div>
+            <div class="project-content">
+              <h3>Pure Pleasure Interior Design Website</h3>
+              <p>
+                A comprehensive interior design website developed remotely,
+                showcasing modern design solutions with interactive galleries
+                and contact features.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">UI/UX Design</span>
+                <span class="project-tag">Remote Development</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link demo-link"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+                <a
+                  href="https://github.com/AdieleSolomon/Interior-design/blob/main/index.html"
+                  class="project-link github-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 - Remote Work Project -->
+          <div class="project-card" data-category="web">
+            <div
+              class="project-img"
+              style="background-color: rgba(52, 152, 219, 0.2)">
+              <i
+                class="fas fa-globe"
+                style="font-size: 3rem; color: #3498db"></i>
+            </div>
+            <div class="project-content">
+              <h3>ELASTIC TOURS LTD - Chartered Tour Operator</h3>
+              <p>
+                Developed a web application remotely for ELASTIC TOURS LTD, Your
+                Premier Chartered Tour Operator for Unforgettable Experiences
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Real-time Features</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link demo-link"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+                <a
+                  href="https://github.com/AdieleSolomon/Interior-design/blob/main/index.html"
+                  class="project-link github-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <p>
+            More projects coming soon! I'm currently working on several exciting
+            developments.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Hard Skill</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Full-Stack Development</li>
-                        <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
-                        <li><i class="fas fa-check"></i> Node.js & Express</li>
-                        <li><i class="fas fa-check"></i> MySQL & Database Management</li>
-                        <li><i class="fas fa-check"></i> RESTful API Development With VS Code</li>
-                        <li><i class="fas fa-check"></i> Deployment Tools (Railway, Vercel, Render Netlify)</li>
-                        <li><i class="fas fa-check"></i> GitHub Version Control</li>
-                        <li><i class="fas fa-check"></i> Responsive Web Design Tools/Apps</li>
-                        <li><i class="fas fa-check"></i> Digital Tool Proficiency</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skill</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Team Leadership</li>
-                        <li><i class="fas fa-check"></i> Mentoring & Development</li>
-                        <li><i class="fas fa-check"></i> Communication and Problem Solving</li>
-                        <li><i class="fas fa-check"></i> Project Management</li>
-                        <li><i class="fas fa-check"></i> Agile Methodology and Time Management</li>
-                        <li><i class="fas fa-check"></i> Virtual Collaboration and Remote Communication</li>
-                        <li><i class="fas fa-check"></i> Independent Work Ethic and Self-Motivation</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Hard Skill</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i> Full-Stack Development</li>
+              <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
+              <li><i class="fas fa-check"></i> Node.js & Express</li>
+              <li><i class="fas fa-check"></i> MySQL & Database Management</li>
+              <li>
+                <i class="fas fa-check"></i> RESTful API Development With VS
+                Code
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Deployment Tools (Railway, Vercel,
+                Render Netlify)
+              </li>
+              <li><i class="fas fa-check"></i> GitHub Version Control</li>
+              <li>
+                <i class="fas fa-check"></i> Responsive Web Design Tools/Apps
+              </li>
+              <li><i class="fas fa-check"></i> Digital Tool Proficiency</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Soft Skill</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i> Team Leadership</li>
+              <li><i class="fas fa-check"></i> Mentoring & Development</li>
+              <li>
+                <i class="fas fa-check"></i> Communication and Problem Solving
+              </li>
+              <li><i class="fas fa-check"></i> Project Management</li>
+              <li>
+                <i class="fas fa-check"></i> Agile Methodology and Time
+                Management
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Virtual Collaboration and Remote
+                Communication
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Independent Work Ethic and
+                Self-Motivation
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
-        <div class="container">
-            <h2>Experiences</h2>
-            <div class="timeline">
-                <!-- Remote Work Section with special styling -->
-                <div class="timeline-item remote-work">
-                    <div class="timeline-content">
-                        <div class="remote-badge">
-                            <i class="fas fa-laptop-house"></i> Remote Work
-                        </div>
-                        <span class="timeline-date">June 2025 - Present</span>
-                        <h3>Pure Pleasure Building and Interior Concept LTD</h3>
-                        <h4>Full-Stack Developer</h4>
-                        <p>Working remotely to develop web applications and digital solutions for interior design projects.</p>
-                        <div class="remote-highlights">
-                            <h5>Key Accomplishments:</h5>
-                            <ul class="experience-details">
-                                <li>Built a responsive web application from concept to deployment</li>
-                                <li>Optimized web application performance, achieving 40% faster page load times</li>
-                                <li>Resulted in improved user engagement and 15% lower bounce rates</li>
-                                <li>Enhanced mobile experience with responsive design optimizations</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Git</span>
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 2019 - Jan 2020</span>
-                        <h3>Rivers State Television (RSTV)</h3>
-                        <h4>Staff Worker - ICT Department</h4>
-                        <p>Worked in the ICT department, gaining practical experience in technology operations and support.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Experiences</h2>
+        <div class="timeline">
+          <!-- Remote Work Section with special styling -->
+          <div class="timeline-item remote-work">
+            <div class="timeline-content">
+              <div class="remote-badge">
+                <i class="fas fa-laptop-house"></i> Remote Work
+              </div>
+              <span class="timeline-date">June 2025 - Present</span>
+              <h3>Pure Pleasure Building and Interior Concept LTD</h3>
+              <h4>Full-Stack Developer</h4>
+              <p>
+                Working remotely to develop web applications and digital
+                solutions for interior design projects.
+              </p>
+              <div class="remote-highlights">
+                <h5>Key Accomplishments:</h5>
+                <ul class="experience-details">
+                  <li>
+                    Built a responsive web application from concept to
+                    deployment
+                  </li>
+                  <li>
+                    Optimized web application performance, achieving 40% faster
+                    page load times
+                  </li>
+                  <li>
+                    Resulted in improved user engagement and 15% lower bounce
+                    rates
+                  </li>
+                  <li>
+                    Enhanced mobile experience with responsive design
+                    optimizations
+                  </li>
+                </ul>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+              </div>
             </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">July 2019 - Jan 2020</span>
+              <h3>Rivers State Television (RSTV)</h3>
+              <h4>Staff Worker - ICT Department</h4>
+              <p>
+                Worked in the ICT department, gaining practical experience in
+                technology operations and support.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Location</h3>
-                            <p>Abia State, Nigeria</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Phone</h3>
-                            <p>
-                                <a href="tel:08069383370" class="clickable-phone" title="Click to call">08069383370</a>, 
-                                <a href="tel:08127890779" class="clickable-phone" title="Click to call">08127890779</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p><a href="mailto:solomonadiele1@gmail.com" class="clickable-email" title="Click to send email">solomonadiele1@gmail.com</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="user_name" name="user_name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="user_email" name="user_email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" id="user_phone" name="user_phone" class="form-control" placeholder="Your Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="contact-form-buttons">
-                            <button type="button" class="btn" id="emailSubmitBtn">
-                                <i class="fas fa-envelope"></i> Send via Email
-                            </button>
-                            <button type="button" class="btn btn-whatsapp" id="whatsappSubmitBtn">
-                                <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                            </button>
-                        </div>
-                    </form>
-                </div>
+      <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Location</h3>
+                <p>Abia State, Nigeria</p>
+              </div>
             </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <p>
+                  <a
+                    href="tel:08069383370"
+                    class="clickable-phone"
+                    title="Click to call"
+                    >08069383370</a
+                  >,
+                  <a
+                    href="tel:08127890779"
+                    class="clickable-phone"
+                    title="Click to call"
+                    >08127890779</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <p>
+                  <a
+                    href="mailto:solomonadiele1@gmail.com"
+                    class="clickable-email"
+                    title="Click to send email"
+                    >solomonadiele1@gmail.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="user_name"
+                  name="user_name"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="user_email"
+                  name="user_email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="user_phone"
+                  name="user_phone"
+                  class="form-control"
+                  placeholder="Your Phone Number"
+                  required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  placeholder="Subject"
+                  required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  placeholder="Your Message"
+                  required></textarea>
+              </div>
+              <div class="contact-form-buttons">
+                <button type="button" class="btn" id="emailSubmitBtn">
+                  <i class="fas fa-envelope"></i> Send via Email
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-whatsapp"
+                  id="whatsappSubmitBtn">
+                  <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-logo">SOLOMON <span>CHIMEREUCHEYA</span> <span>ADIELE</span></div>
-            <div class="social-links">
-                <a href="http://linkedin.com/in/adiele-solomon" class="social-link" title="Connect on LinkedIn" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/AdieleSolomon" class="social-link" title="View GitHub Profile" aria-label="View GitHub Profile"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09" class="social-link" title="Follow on Twitter" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/share/16t48ctFC7/" class="social-link" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="cv-download.html" class="social-link" title="download real cv" aria-label="download real cv"><i class="fas fa-file-download"></i></a>
-            </div>
-            <p class="copyright">&copy; 2025 Solomon Adiele. All Rights Reserved.</p>
+      <div class="container">
+        <div class="footer-logo">
+          SOLOMON <span>CHIMEREUCHEYA</span> <span>ADIELE</span>
         </div>
+        <div class="social-links">
+          <a
+            href="http://linkedin.com/in/adiele-solomon"
+            class="social-link"
+            title="Connect on LinkedIn"
+            aria-label="Connect on LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://github.com/AdieleSolomon"
+            class="social-link"
+            title="View GitHub Profile"
+            aria-label="View GitHub Profile"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09"
+            class="social-link"
+            title="Follow on Twitter"
+            aria-label="Follow on Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/share/16t48ctFC7/"
+            class="social-link"
+            title="Follow on Facebook"
+            aria-label="Follow on Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="cv-download.html"
+            class="social-link"
+            title="download real cv"
+            aria-label="download real cv"
+            ><i class="fas fa-file-download"></i
+          ></a>
+        </div>
+        <p class="copyright">
+          &copy; 2025 Solomon Adiele. All Rights Reserved.
+        </p>
+      </div>
     </footer>
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>
