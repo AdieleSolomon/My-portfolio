@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Optimization Tools - Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 30px 0;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ffd700;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      }
+
+      header p {
+        font-size: 1.1rem;
+        color: #a0a0a0;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+      }
+
+      .tool-card {
+        background: linear-gradient(135deg, #2d1b3d 0%, #1a0b2e 100%);
+        border: 2px solid #ffd700;
+        border-radius: 10px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tool-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 215, 0, 0.1);
+        transition: left 0.3s ease;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+      }
+
+      .tool-card:hover::before {
+        left: 100%;
+      }
+
+      .tool-icon {
+        font-size: 3rem;
+        color: #ffd700;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .tool-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #ffd700;
+      }
+
+      .tool-card p {
+        color: #b0b0b0;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .tool-features {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+
+      .tool-features li {
+        color: #a0a0a0;
+        padding: 5px 0;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .tool-features li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .tool-btn {
+        display: inline-block;
+        background: #ffd700;
+        color: #1a1a2e;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .tool-btn:hover {
+        background: #ffed4e;
+        transform: scale(1.05);
+      }
+
+      .features-section {
+        background: linear-gradient(135deg, #2d1b3d 0%, #1a0b2e 100%);
+        border: 2px solid #ffd700;
+        border-radius: 10px;
+        padding: 40px;
+        margin-bottom: 50px;
+      }
+
+      .features-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #ffd700;
+        text-align: center;
+      }
+
+      .features-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .feature-icon {
+        font-size: 1.8rem;
+        color: #ffd700;
+        flex-shrink: 0;
+      }
+
+      .feature-content h4 {
+        margin-bottom: 5px;
+        color: #ffd700;
+      }
+
+      .feature-content p {
+        color: #b0b0b0;
+        font-size: 0.95rem;
+      }
+
+      .footer-section {
+        background: linear-gradient(135deg, #2d1b3d 0%, #1a0b2e 100%);
+        border: 2px solid #ffd700;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .footer-section h3 {
+        color: #ffd700;
+        margin-bottom: 15px;
+      }
+
+      .footer-section p {
+        color: #b0b0b0;
+        margin-bottom: 20px;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        background: #ffd700;
+        color: #1a1a2e;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 10px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .contact-btn:hover {
+        background: #ffed4e;
+        transform: scale(1.05);
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #ffd700;
+        color: #1a1a2e;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: #ffed4e;
+        transform: translateX(-5px);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .tools-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .features-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="back-btn" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+
+      <header>
+        <h1><i class="fas fa-tools"></i> System Optimization Tools</h1>
+        <p>Professional Windows System Tools & Utilities</p>
+      </header>
+
+      <div class="tools-grid">
+        <!-- Tool 1: Disk Cleanup -->
+        <div class="tool-card">
+          <i class="fas fa-trash-alt tool-icon"></i>
+          <h3>Disk Cleanup</h3>
+          <p>
+            Remove temporary files, cache, and unnecessary data to free up disk
+            space and improve system performance.
+          </p>
+          <ul class="tool-features">
+            <li>Remove temp files</li>
+            <li>Clear cache memory</li>
+            <li>Delete log files</li>
+            <li>Safe deletion</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+
+        <!-- Tool 2: System Optimizer -->
+        <div class="tool-card">
+          <i class="fas fa-bolt tool-icon"></i>
+          <h3>System Optimizer</h3>
+          <p>
+            Optimize Windows startup, manage background processes, and improve
+            overall system performance.
+          </p>
+          <ul class="tool-features">
+            <li>Startup optimization</li>
+            <li>Process management</li>
+            <li>Memory optimization</li>
+            <li>Performance boost</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+
+        <!-- Tool 3: Registry Cleaner -->
+        <div class="tool-card">
+          <i class="fas fa-database tool-icon"></i>
+          <h3>Registry Cleaner</h3>
+          <p>
+            Scan and clean invalid registry entries to enhance system stability
+            and reduce crashes.
+          </p>
+          <ul class="tool-features">
+            <li>Registry scanning</li>
+            <li>Invalid entry removal</li>
+            <li>System stability</li>
+            <li>Backup & restore</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+
+        <!-- Tool 4: Antivirus Scanner -->
+        <div class="tool-card">
+          <i class="fas fa-shield-alt tool-icon"></i>
+          <h3>Antivirus Scanner</h3>
+          <p>
+            Comprehensive malware and virus scanning to protect your system from
+            threats and infections.
+          </p>
+          <ul class="tool-features">
+            <li>Full system scan</li>
+            <li>Real-time protection</li>
+            <li>Threat removal</li>
+            <li>Quarantine system</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+
+        <!-- Tool 5: Defragmentation -->
+        <div class="tool-card">
+          <i class="fas fa-cubes tool-icon"></i>
+          <h3>Defragmentation</h3>
+          <p>
+            Defragment hard drives to improve file access speed and optimize
+            disk performance.
+          </p>
+          <ul class="tool-features">
+            <li>Hard disk defrag</li>
+            <li>File reorganization</li>
+            <li>Speed improvement</li>
+            <li>Scheduled defrag</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+
+        <!-- Tool 6: Driver Update -->
+        <div class="tool-card">
+          <i class="fas fa-microchip tool-icon"></i>
+          <h3>Driver Update Manager</h3>
+          <p>
+            Automatically detect and update outdated drivers to ensure optimal
+            hardware performance.
+          </p>
+          <ul class="tool-features">
+            <li>Driver detection</li>
+            <li>Automatic updates</li>
+            <li>Hardware optimization</li>
+            <li>Rollback option</li>
+          </ul>
+          <button class="tool-btn"><i class="fas fa-play"></i> Launch</button>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-list">
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>One-Click Optimization</h4>
+              <p>
+                Optimize your system with just one click for maximum
+                convenience.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>Real-time Monitoring</h4>
+              <p>
+                Monitor system performance in real-time with detailed analytics.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>Automatic Scheduling</h4>
+              <p>Schedule automated maintenance tasks during off-peak hours.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>Backup & Restore</h4>
+              <p>Create system backups and restore if needed with ease.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>Safe Mode</h4>
+              <p>
+                All operations are safe with built-in protection mechanisms.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <div class="feature-content">
+              <h4>Detailed Reports</h4>
+              <p>
+                Get comprehensive reports on system health and optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-info-circle"></i> Interested in These Tools?</h3>
+        <p>
+          I provide comprehensive system optimization services. Let's discuss
+          your system maintenance needs.
+        </p>
+        <div>
+          <a href="index.html#contact" class="contact-btn">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+          <a
+            href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20am%20interested%20in%20system%20optimization%20services"
+            class="contact-btn"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

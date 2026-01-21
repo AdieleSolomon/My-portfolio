@@ -10,7 +10,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Add EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -86,6 +85,9 @@
               <a href="#projects" class="side-panel-option">
                 <i class="fas fa-project-diagram"></i> Projects
               </a>
+              <a href="#video-editing" class="side-panel-option">
+                <i class="fas fa-video"></i> Video Editing
+              </a>
               <a
                 href="#contact"
                 class="side-panel-option"
@@ -102,6 +104,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#video-editing">Video Editing</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -110,6 +113,13 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <!-- Hero Image Grid Background -->
+      <div class="hero-grid-container" id="heroGridContainer">
+        <div class="hero-grid">
+          <!-- Grid images will be inserted here by JavaScript -->
+        </div>
+      </div>
+
       <div class="container">
         <h1>Solomon Chimereucheya Adiele</h1>
         <p>A Full-Stack Developer & IT Professional</p>
@@ -185,7 +195,7 @@
               </div>
             </div>
 
-            <!-- Updated: Two buttons for View CV and Download CV -->
+            <!-- CV buttons -->
             <div class="cv-buttons">
               <a href="Solomon-Adiele-CV.html" class="btn">
                 <i class="fas fa-eye"></i> View CV
@@ -256,6 +266,7 @@
           <button class="filter-btn" data-filter="design">
             Design Solutions
           </button>
+          <button class="filter-btn" data-filter="video">Video Editing</button>
         </div>
 
         <div class="projects-grid">
@@ -280,7 +291,9 @@
                 <span class="project-tag">JavaScript</span>
               </div>
               <div class="project-links">
-                <a href="#" class="project-link demo-link"
+                <a
+                  href="https://adiele-solomon-github-io.vercel.app/"
+                  class="project-link demo-link"
                   ><i class="fas fa-external-link-alt"></i> Live Demo</a
                 >
                 <a
@@ -312,14 +325,16 @@
                 <span class="project-tag">System Tools</span>
               </div>
               <div class="project-links">
-                <a href="#" class="project-link demo-link"
+                <a
+                  href="./system-tools-demo.html"
+                  class="project-link demo-link system-demo-link"
                   ><i class="fas fa-external-link-alt"></i> Live Demo</a
                 >
               </div>
             </div>
           </div>
 
-          <!-- Project 3 - Interior Design (Updated with remote work) -->
+          <!-- Project 3 - Interior Design -->
           <div class="project-card" data-category="design web">
             <div
               class="project-img"
@@ -388,6 +403,96 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 5 - Throne of Grace Church Website -->
+          <div class="project-card church-project" data-category="web">
+            <div class="church-badge">
+              <i class="fas fa-church"></i> Church Website
+            </div>
+            <div
+              class="project-img"
+              style="background-color: rgba(142, 68, 173, 0.2)">
+              <i
+                class="fas fa-church"
+                style="font-size: 3rem; color: #8e44ad"></i>
+            </div>
+            <div class="project-content">
+              <h3>Throne of Grace Church Website</h3>
+              <p>
+                A comprehensive multi-page church website with dynamic content
+                management, event scheduling, online giving, prayer request
+                system, and member portal. Features include live streaming
+                integration and responsive design.
+              </p>
+
+              <div class="church-stats">
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Pages</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">6+</span>
+                  <span class="stat-label">Features</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Responsive</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Church Management</span>
+                <span class="project-tag">Online Giving</span>
+                <span class="project-tag">Live Streaming</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#" class="project-link demo-link church-demo-link">
+                  <i class="fas fa-external-link-alt"></i> View Demo
+                </a>
+                <a href="#" class="project-link github-link">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Video Editing Portfolio -->
+          <div class="project-card" data-category="video">
+            <div
+              class="project-img"
+              style="background-color: rgba(231, 76, 60, 0.2)">
+              <i
+                class="fas fa-video"
+                style="font-size: 3rem; color: #e74c3c"></i>
+            </div>
+            <div class="project-content">
+              <h3>Professional Video Editing Portfolio</h3>
+              <p>
+                Created compelling video content for corporate clients, social
+                media campaigns, and events using professional editing software
+                and techniques.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Adobe Premiere Pro</span>
+                <span class="project-tag">After Effects</span>
+                <span class="project-tag">DaVinci Resolve</span>
+                <span class="project-tag">Motion Graphics</span>
+                <span class="project-tag">Color Grading</span>
+              </div>
+              <div class="project-links">
+                <a href="#video-editing" class="project-link demo-link">
+                  <i class="fas fa-play-circle"></i> View Videos
+                </a>
+                <a href="#video-editing" class="project-link github-link">
+                  <i class="fas fa-download"></i> Services
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px">
@@ -399,13 +504,207 @@
       </div>
     </section>
 
+    <!-- Video Editing Section -->
+    <section id="video-editing" class="video-editing">
+      <div class="container">
+        <h2>Video Editing Showcase</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+          Professional video editing services for corporate, social media, and
+          event content. From raw footage to polished videos, I create
+          compelling visual stories.
+        </p>
+
+        <!-- Video Gallery -->
+        <div class="video-gallery">
+          <!-- Video 1 -->
+          <div class="video-item">
+            <div class="video-player">
+              <div class="video-placeholder" data-video-id="corporate_promo">
+                <i class="fas fa-play-circle"></i>
+                <div
+                  class="video-thumbnail"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80');
+                  "></div>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Corporate Promotional Video</h3>
+              <p>
+                Professional corporate video with motion graphics, voiceover,
+                and brand integration
+              </p>
+              <div class="video-tags">
+                <span class="video-tag">Adobe Premiere Pro</span>
+                <span class="video-tag">After Effects</span>
+                <span class="video-tag">Color Grading</span>
+                <span class="video-tag">Motion Graphics</span>
+              </div>
+              <div class="video-stats">
+                <span><i class="fas fa-clock"></i> 3:45 min</span>
+                <span><i class="fas fa-calendar"></i> Dec 2024</span>
+                <span><i class="fas fa-film"></i> 4K Resolution</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-item">
+            <div class="video-player">
+              <div class="video-placeholder" data-video-id="social_media_reel">
+                <i class="fas fa-play-circle"></i>
+                <div
+                  class="video-thumbnail"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=800&q=80');
+                  "></div>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Social Media Reel</h3>
+              <p>
+                Engaging social media content with dynamic transitions, text
+                animations, and trending audio
+              </p>
+              <div class="video-tags">
+                <span class="video-tag">Final Cut Pro</span>
+                <span class="video-tag">Motion Graphics</span>
+                <span class="video-tag">Sound Design</span>
+                <span class="video-tag">Optimized for Mobile</span>
+              </div>
+              <div class="video-stats">
+                <span><i class="fas fa-clock"></i> 1:30 min</span>
+                <span><i class="fas fa-calendar"></i> Nov 2024</span>
+                <span><i class="fas fa-film"></i> 1080p Vertical</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-item">
+            <div class="video-player">
+              <div class="video-placeholder" data-video-id="event_highlights">
+                <i class="fas fa-play-circle"></i>
+                <div
+                  class="video-thumbnail"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80');
+                  "></div>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Event Highlights</h3>
+              <p>
+                Multi-camera event coverage with seamless editing, audio
+                synchronization, and highlight compilation
+              </p>
+              <div class="video-tags">
+                <span class="video-tag">DaVinci Resolve</span>
+                <span class="video-tag">Multi-cam Editing</span>
+                <span class="video-tag">Audio Mixing</span>
+                <span class="video-tag">Highlights Compilation</span>
+              </div>
+              <div class="video-stats">
+                <span><i class="fas fa-clock"></i> 5:20 min</span>
+                <span><i class="fas fa-calendar"></i> Oct 2024</span>
+                <span><i class="fas fa-film"></i> 4K HDR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Editing Services -->
+        <div class="video-services">
+          <h3
+            style="
+              text-align: center;
+              margin: 50px 0 30px;
+              color: var(--accent);
+            ">
+            Video Editing Services
+          </h3>
+          <div class="services-grid">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h4>Corporate Videos</h4>
+              <ul>
+                <li>Company presentations</li>
+                <li>Product demos</li>
+                <li>Training videos</li>
+                <li>Brand storytelling</li>
+              </ul>
+            </div>
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fas fa-hashtag"></i>
+              </div>
+              <h4>Social Media Content</h4>
+              <ul>
+                <li>Instagram Reels/TikToks</li>
+                <li>YouTube Shorts</li>
+                <li>Facebook Videos</li>
+                <li>Platform optimization</li>
+              </ul>
+            </div>
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h4>Event Coverage</h4>
+              <ul>
+                <li>Wedding videos</li>
+                <li>Conference highlights</li>
+                <li>Ceremony coverage</li>
+                <li>After-movie creation</li>
+              </ul>
+            </div>
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h4>Post-Production</h4>
+              <ul>
+                <li>Color correction</li>
+                <li>Audio enhancement</li>
+                <li>Motion graphics</li>
+                <li>Special effects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Contact for Video Services -->
+        <div class="video-contact-cta">
+          <div class="cta-content">
+            <h3>
+              <i class="fas fa-video"></i> Need Professional Video Editing?
+            </h3>
+            <p>Let's discuss your project and bring your vision to life</p>
+            <div class="cta-buttons">
+              <a href="#contact" class="btn">
+                <i class="fas fa-envelope"></i> Contact Me
+              </a>
+              <a
+                href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20need%20video%20editing%20services"
+                class="btn btn-whatsapp"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
       <div class="container">
         <h2>My Skills</h2>
         <div class="skills-container">
           <div class="skill-category">
-            <h3>Hard Skill</h3>
+            <h3>Hard Skills</h3>
             <ul class="skill-list">
               <li><i class="fas fa-check"></i> Full-Stack Development</li>
               <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
@@ -417,17 +716,24 @@
               </li>
               <li>
                 <i class="fas fa-check"></i> Deployment Tools (Railway, Vercel,
-                Render Netlify)
+                Render, Netlify)
               </li>
               <li><i class="fas fa-check"></i> GitHub Version Control</li>
               <li>
                 <i class="fas fa-check"></i> Responsive Web Design Tools/Apps
               </li>
               <li><i class="fas fa-check"></i> Digital Tool Proficiency</li>
+              <li>
+                <i class="fas fa-check"></i> Video Editing & Post-production
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Adobe Premiere Pro, After Effects,
+                DaVinci Resolve
+              </li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Soft Skill</h3>
+            <h3>Soft Skills</h3>
             <ul class="skill-list">
               <li><i class="fas fa-check"></i> Team Leadership</li>
               <li><i class="fas fa-check"></i> Mentoring & Development</li>
@@ -447,6 +753,14 @@
                 <i class="fas fa-check"></i> Independent Work Ethic and
                 Self-Motivation
               </li>
+              <li>
+                <i class="fas fa-check"></i> Creative Storytelling & Visual
+                Communication
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Time Management for Project
+                Deadlines
+              </li>
             </ul>
           </div>
         </div>
@@ -458,7 +772,7 @@
       <div class="container">
         <h2>Experiences</h2>
         <div class="timeline">
-          <!-- Remote Work Section with special styling -->
+          <!-- Remote Work Section -->
           <div class="timeline-item remote-work">
             <div class="timeline-content">
               <div class="remote-badge">
@@ -634,6 +948,17 @@
       </div>
     </section>
 
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-content">
+        <button class="video-modal-close">&times;</button>
+        <div class="video-container" id="videoContainer">
+          <!-- Video player will be inserted here -->
+        </div>
+        <div class="video-modal-info" id="videoModalInfo"></div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -682,6 +1007,7 @@
         </p>
       </div>
     </footer>
-    <script src="./js/script.js"></script>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
