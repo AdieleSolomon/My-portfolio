@@ -36,6 +36,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="image"
+      href="assets/images/profile1-hero.jpg"
+      imagesrcset="assets/images/profile1-hero.jpg 1x, assets/images/profile1.jpg 2x" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
     <link
@@ -108,7 +113,14 @@
           </div>
 
           <aside class="hero-panel reveal-delay">
-            <img src="assets/images/profile1.jpg" alt="Solomon Adiele" />
+            <img
+              src="assets/images/profile1-hero.jpg"
+              srcset="assets/images/profile1-hero.jpg 1x, assets/images/profile1.jpg 2x"
+              alt="Solomon Adiele"
+              width="760"
+              height="1013"
+              fetchpriority="high"
+              decoding="async" />
             <div class="stat-grid">
               <article>
                 <h3>4+</h3>
