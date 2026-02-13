@@ -1,1026 +1,285 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      name="description"
+      content="Solomon Adiele is a Full-Stack Developer building fast, reliable web products. Explore projects, CV, and contact details." />
+    <meta
+      name="keywords"
+      content="Solomon Adiele, full-stack developer, portfolio, web developer, JavaScript, Node.js, Nigeria" />
+    <meta name="author" content="Solomon Adiele" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://adiele-solomon-github-io.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Solomon Adiele | Personal Website" />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer portfolio featuring projects, experience, and CV." />
+    <meta property="og:url" content="https://adiele-solomon-github-io.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Solomon Adiele | Personal Website" />
+    <meta
+      name="twitter:description"
+      content="Full-Stack Developer portfolio featuring projects, experience, and CV." />
+    <meta
+      name="twitter:image"
+      content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
+    <meta
       name="google-site-verification"
       content="cNif3_RpinazDFWrunZlfPVG1DqiIwMQ0AKZOj5D_lE" />
-    <title>Solomon Adiele | Full-Stack Developer</title>
+    <title>Solomon Adiele | Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Solomon Chimereucheya Adiele",
+        "url": "https://adiele-solomon-github-io.vercel.app/",
+        "jobTitle": "Full-Stack Developer",
+        "email": "mailto:solomonadiele1@gmail.com",
+        "sameAs": [
+          "https://github.com/AdieleSolomon",
+          "http://linkedin.com/in/adiele-solomon",
+          "https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09",
+          "https://www.facebook.com/share/16t48ctFC7/"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <!-- Background Pattern -->
-    <div class="background-pattern"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
 
-    <!-- WhatsApp Modal -->
-    <div class="whatsapp-modal" id="whatsappModal">
-      <div class="whatsapp-modal-content">
-        <h3>Get My CV Document</h3>
-        <p>Contact me on WhatsApp to receive my complete CV document</p>
-        <a
-          href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20would%20like%20to%20get%20your%20CV%20document"
-          class="whatsapp-number"
-          target="_blank"
-          rel="noopener">
-          <i class="fab fa-whatsapp"></i> 08069383370
-        </a>
-        <p style="font-size: 0.9rem; margin-top: 15px; color: #888">
-          Click the number above to message me directly on WhatsApp
-        </p>
-        <button class="modal-close" onclick="closeWhatsAppModal()">
-          Close
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">SOL<span>OMON</span></a>
+        <nav class="main-nav">
+          <a href="#about">About</a>
+          <a href="#highlights">Highlights</a>
+          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-small" href="portfolio.html">Open Portfolio</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
-    </div>
-
-    <!-- Header & Navigation -->
-    <header>
-      <div class="container">
-        <nav>
-          <div class="logo-container">
-            <div class="logo">
-              <div class="name-stack">
-                <div class="name-line">SOLOMON <span>ADIELE</span></div>
-              </div>
-            </div>
-            <div class="tagline">Full-Stack Developer & IT Professional</div>
-          </div>
-
-          <!-- Three-line button -->
-          <button class="three-line-btn" id="threeLineBtn" title="Toggle Menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </button>
-
-          <!-- Side panel -->
-          <div class="side-panel" id="sidePanel">
-            <div class="side-panel-header">
-              <div class="side-panel-title">Navigation</div>
-              <button class="side-panel-close" id="sidePanelClose">
-                &times;
-              </button>
-            </div>
-            <div class="side-panel-content">
-              <a href="#home" class="side-panel-option">
-                <i class="fas fa-home"></i> Home
-              </a>
-              <a href="#about" class="side-panel-option">
-                <i class="fas fa-user"></i> About
-              </a>
-              <a href="#skills" class="side-panel-option">
-                <i class="fas fa-code"></i> Skills
-              </a>
-              <a href="#experience" class="side-panel-option">
-                <i class="fas fa-briefcase"></i> Experience
-              </a>
-              <a href="#education" class="side-panel-option">
-                <i class="fas fa-graduation-cap"></i> Education
-              </a>
-              <a href="#projects" class="side-panel-option">
-                <i class="fas fa-project-diagram"></i> Projects
-              </a>
-              <a href="#video-editing" class="side-panel-option">
-                <i class="fas fa-video"></i> Video Editing
-              </a>
-              <a
-                href="#contact"
-                class="side-panel-option"
-                style="background: rgba(255, 215, 0, 0.15)">
-                <i class="fas fa-envelope"></i> Contact
-              </a>
-            </div>
-          </div>
-
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#video-editing">Video Editing</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="#about">About</a>
+        <a href="#highlights">Highlights</a>
+        <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-small" href="portfolio.html">Open Portfolio</a>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <!-- Hero Image Grid Background -->
-      <div class="hero-grid-container" id="heroGridContainer">
-        <div class="hero-grid">
-          <!-- Grid images will be inserted here by JavaScript -->
-        </div>
-      </div>
-
-      <div class="container">
-        <h1>Solomon Chimereucheya Adiele</h1>
-        <p>A Full-Stack Developer & IT Professional</p>
-        <p>
-          Passionate about creating efficient digital solutions and leveraging
-          technology to solve real-world problems.
-        </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn">View My Work</a>
-          <a href="#contact" class="btn btn-primary">Contact Me</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-          <div class="about-img">
-            <!-- Profile image with fallback -->
-            <img
-              src="./assets/images/profile1.jpg"
-              alt="Solomon Adiele - Full-Stack Developer"
-              onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 5rem; color: #777;\'></i>'" />
-          </div>
-          <div class="about-text">
-            <h3>Full-Stack Developer</h3>
-            <p>
-              I am a dedicated and passionate full-stack developer with a strong
-              degree in computer science. My career objective is to work
-              effectively to contribute to organizational growth and development
-              through my skills, experience, honesty, dedication, integrity, and
-              team spirit.
+    <main>
+      <section class="hero section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Full-Stack Developer</p>
+            <h1>
+              Building sharp digital products with
+              <span>design-grade execution.</span>
+            </h1>
+            <p class="lead">
+              I turn ideas into reliable web systems across frontend, backend,
+              infrastructure and growth tooling.
             </p>
-
-            <div class="personal-info">
-              <div class="info-item">
-                <span class="info-label">Name:</span>
-                <span>Solomon Chimereucheya Adiele</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Email:</span>
-                <span
-                  ><a
-                    href="mailto:solomonadiele1@gmail.com"
-                    class="clickable-email"
-                    title="Click to send email"
-                    >solomonadiele1@gmail.com</a
-                  ></span
-                >
-              </div>
-              <div class="info-item">
-                <span class="info-label">Phone:</span>
-                <span>
-                  <a
-                    href="tel:08069383370"
-                    class="clickable-phone"
-                    title="Click to call"
-                    >08069383370</a
-                  >,
-                  <a
-                    href="tel:08127890779"
-                    class="clickable-phone"
-                    title="Click to call"
-                    >08127890779</a
-                  >
-                </span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Location:</span>
-                <span>Abia State, Nigeria</span>
-              </div>
-            </div>
-
-            <!-- CV buttons -->
-            <div class="cv-buttons">
-              <a href="Solomon-Adiele-CV.html" class="btn">
-                <i class="fas fa-eye"></i> View CV
-              </a>
-              <button class="btn btn-secondary" onclick="openWhatsAppModal()">
-                <i class="fas fa-download"></i> Download CV
-              </button>
+            <div class="hero-cta">
+              <a class="btn" href="portfolio.html">Enter Portfolio</a>
+              <a class="btn btn-ghost" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">View CV</a>
+              <a class="btn btn-ghost" href="#contact">Book a Call</a>
             </div>
           </div>
+
+          <aside class="hero-panel reveal-delay">
+            <img src="assets/images/profile1.jpg" alt="Solomon Adiele" />
+            <div class="stat-grid">
+              <article>
+                <h3>4+</h3>
+                <p>Years Building</p>
+              </article>
+              <article>
+                <h3>12+</h3>
+                <p>Projects Delivered</p>
+              </article>
+              <article>
+                <h3>99%</h3>
+                <p>Commitment Rate</p>
+              </article>
+              <article>
+                <h3>24/7</h3>
+                <p>Learning Mode</p>
+              </article>
+            </div>
+          </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="education-container">
-          <div class="education-item">
-            <div class="education-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Full-Stack Developer</h3>
-            <p class="education-year">2025</p>
-            <p>Babcock University, Ilishan Remo, Ogun State</p>
+      <section class="section" id="about">
+        <div class="container split reveal">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>Engineer mindset, product focus.</h2>
           </div>
-          <div class="education-item">
-            <div class="education-icon">
-              <i class="fas fa-university"></i>
-            </div>
-            <h3>BSc Computer Science</h3>
-            <p class="education-year">2017 - 2020</p>
-            <p>Clifford University, Ihie, Abia State</p>
-          </div>
-          <div class="education-item">
-            <div class="education-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <h3>Diploma in Computer Training</h3>
-            <p class="education-year">2016</p>
-            <p>Ever Great Computers, Omoba, Abia State</p>
-          </div>
-          <div class="education-item">
-            <div class="education-icon">
-              <i class="fas fa-school"></i>
-            </div>
-            <h3>SSCE</h3>
-            <p class="education-year">2009 - 2015</p>
-            <p>Lucy Memorial Secondary School, Amiri, Abia State</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2>My Projects</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px">
-          Here are some of the projects I've worked on. I'm continuously
-          expanding my portfolio with new and exciting developments.
-        </p>
-
-        <div class="projects-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web">Web Development</button>
-          <button class="filter-btn" data-filter="system">System Tools</button>
-          <button class="filter-btn" data-filter="design">
-            Design Solutions
-          </button>
-          <button class="filter-btn" data-filter="video">Video Editing</button>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 - Web Development -->
-          <div class="project-card" data-category="web">
-            <div
-              class="project-img"
-              style="background-color: rgba(52, 152, 219, 0.2)">
-              <i
-                class="fas fa-laptop-code"
-                style="font-size: 3rem; color: #3498db"></i>
-            </div>
-            <div class="project-content">
-              <h3>Responsive Portfolio Website</h3>
-              <p>
-                A fully responsive personal portfolio website built with HTML,
-                CSS, and JavaScript.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">HTML</span>
-                <span class="project-tag">CSS</span>
-                <span class="project-tag">JavaScript</span>
+          <div>
+            <p>
+              I am Solomon Chimereucheya Adiele, a full-stack developer who
+              builds fast, resilient and human-centered software. I care about
+              clean architecture, performance, and practical outcomes that move
+              teams forward.
+            </p>
+            <div class="detail-list">
+              <div class="info-row">
+                <span>Name</span>
+                <strong>Solomon Chimereucheya Adiele</strong>
               </div>
-              <div class="project-links">
-                <a
-                  href="https://adiele-solomon-github-io.vercel.app/"
-                  class="project-link demo-link"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html"
-                  class="project-link github-link"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
+              <div class="info-row">
+                <span>Email</span>
+                <a href="mailto:solomonadiele1@gmail.com">solomonadiele1@gmail.com</a>
               </div>
-            </div>
-          </div>
-
-          <!-- Project 2 - System Tools -->
-          <div class="project-card" data-category="system">
-            <div
-              class="project-img"
-              style="background-color: rgba(44, 62, 80, 0.2)">
-              <i
-                class="fas fa-desktop"
-                style="font-size: 3rem; color: #2c3e50"></i>
-            </div>
-            <div class="project-content">
-              <h3>System Optimization Tool</h3>
-              <p>
-                Satisfactory knowledge in utility applications for system
-                formatting, Windows installation and activation.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">Windows formatting/upgrading</span>
-                <span class="project-tag">System Tools</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="./system-tools-demo.html"
-                  class="project-link demo-link system-demo-link"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AdieleSolomon/My-portfolio/blob/main/system-tools-demo.html"
-                  class="project-link github-link"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 - Interior Design -->
-          <div class="project-card" data-category="design web">
-            <div
-              class="project-img"
-              style="background-color: rgba(139, 115, 85, 0.2)">
-              <i
-                class="fas fa-couch"
-                style="font-size: 3rem; color: #8b7355"></i>
-            </div>
-            <div class="project-content">
-              <h3>Pure Pleasure Interior Design Website</h3>
-              <p>
-                A comprehensive interior design website developed remotely,
-                showcasing modern design solutions with interactive galleries
-                and contact features.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">HTML</span>
-                <span class="project-tag">CSS</span>
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">UI/UX Design</span>
-                <span class="project-tag">Remote Development</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://interio-design-static.vercel.app/"
-                  class="project-link demo-link"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AdieleSolomon/Interio-design-static/blob/main/index.html"
-                  class="project-link github-link"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 - Remote Work Project -->
-          <div class="project-card" data-category="web">
-            <div
-              class="project-img"
-              style="background-color: rgba(52, 152, 219, 0.2)">
-              <i
-                class="fas fa-globe"
-                style="font-size: 3rem; color: #3498db"></i>
-            </div>
-            <div class="project-content">
-              <h3>ELASTIC TOURS LTD - Chartered Tour Operator</h3>
-              <p>
-                Developed a web application remotely for ELASTIC TOURS LTD, Your
-                Premier Chartered Tour Operator for Unforgettable Experiences
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">Node.js</span>
-                <span class="project-tag">MySQL</span>
-                <span class="project-tag">Real-time Features</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://adielesolomon.github.io/ELASTIC-TOURS-LTD/"
-                  class="project-link demo-link"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AdieleSolomon/ELASTIC-TOURS-LTD/blob/main/index.html"
-                  class="project-link github-link"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 - Throne of Grace Church Website -->
-          <div class="project-card church-project" data-category="web">
-            <div class="church-badge">
-              <i class="fas fa-church"></i> Church Website
-            </div>
-            <div
-              class="project-img"
-              style="background-color: rgba(142, 68, 173, 0.2)">
-              <i
-                class="fas fa-church"
-                style="font-size: 3rem; color: #8e44ad"></i>
-            </div>
-            <div class="project-content">
-              <h3>Throne of Grace Church Website</h3>
-              <p>
-                A comprehensive multi-page church website with dynamic content
-                management, event scheduling, online giving, prayer request
-                system, and member portal. Features include live streaming
-                integration and responsive design.
-              </p>
-
-              <div class="church-stats">
-                <div class="stat-item">
-                  <span class="stat-number">10+</span>
-                  <span class="stat-label">Pages</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">6+</span>
-                  <span class="stat-label">Features</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">100%</span>
-                  <span class="stat-label">Responsive</span>
+              <div class="info-row">
+                <span>Phone</span>
+                <div class="phone-wrap">
+                  <a href="tel:+2348069383370">+234 806 938 3370</a>
+                  <a href="tel:+2348127890779">+234 812 789 0779</a>
                 </div>
               </div>
-
-              <div class="project-tags">
-                <span class="project-tag">HTML5</span>
-                <span class="project-tag">CSS3</span>
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">Church Management</span>
-                <span class="project-tag">Online Giving</span>
-                <span class="project-tag">Live Streaming</span>
-              </div>
-
-              <div class="project-links">
-                <a
-                  href="https://throne-of-grace.vercel.app/"
-                  class="project-link demo-link church-demo-link"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <i class="fas fa-external-link-alt"></i> View Demo
-                </a>
-                <a
-                  href="https://github.com/AdieleSolomon/Throne-Of-Grace/blob/main/index.html"
-                  class="project-link github-link">
-                  <i class="fab fa-github"></i> Source Code
-                </a>
+              <div class="info-row">
+                <span>Location</span>
+                <strong>Babcock University, Ogun State, Nigeria.</strong>
               </div>
             </div>
-          </div>
-
-          <!-- Project 6 - Video Editing Portfolio -->
-          <div class="project-card" data-category="video">
-            <div
-              class="project-img"
-              style="background-color: rgba(231, 76, 60, 0.2)">
-              <i
-                class="fas fa-video"
-                style="font-size: 3rem; color: #e74c3c"></i>
-            </div>
-            <div class="project-content">
-              <h3>Professional Video Editing Portfolio</h3>
-              <p>
-                Created compelling video content for corporate clients, social
-                media campaigns, and events using professional editing software
-                and techniques.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">Adobe Premiere Pro</span>
-                <span class="project-tag">After Effects</span>
-                <span class="project-tag">DaVinci Resolve</span>
-                <span class="project-tag">Motion Graphics</span>
-                <span class="project-tag">Color Grading</span>
-              </div>
-              <div class="project-links">
-                <a href="#video-editing" class="project-link demo-link">
-                  <i class="fas fa-play-circle"></i> View Videos
-                </a>
-                <a href="#video-editing" class="project-link github-link">
-                  <i class="fas fa-download"></i> Services
-                </a>
-              </div>
+            <div class="cv-actions">
+              <a class="btn" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">View CV Page</a>
+              <a class="btn btn-ghost" href="cv-download.html" target="_blank" rel="noopener">Download CV</a>
             </div>
           </div>
         </div>
+      </section>
 
-        <div style="text-align: center; margin-top: 40px">
-          <p>
-            More projects coming soon! I'm currently working on several exciting
-            developments.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Video Editing Section -->
-    <section id="video-editing" class="video-editing">
-      <div class="container">
-        <h2>Video Editing Showcase</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px">
-          Professional video editing services for corporate, social media, and
-          event content. From raw footage to polished videos, I create
-          compelling visual stories.
-        </p>
-
-        <!-- Video Gallery -->
-        <div class="video-gallery">
-          <!-- Video 1 -->
-          <div class="video-item">
-            <div class="video-player">
-              <div class="video-placeholder" data-video-id="corporate_promo">
-                <i class="fas fa-play-circle"></i>
-                <div
-                  class="video-thumbnail"
-                  style="
-                    background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80');
-                  "></div>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Corporate Promotional Video</h3>
+      <section class="section" id="highlights">
+        <div class="container reveal">
+          <p class="eyebrow">Selected Highlights</p>
+          <div class="cards">
+            <article class="card">
+              <h3>Church Management Platform</h3>
               <p>
-                Professional corporate video with motion graphics, voiceover,
-                and brand integration
+                Built multi-page flows, event modules, and member interactions
+                with responsive-first implementation.
               </p>
-              <div class="video-tags">
-                <span class="video-tag">Adobe Premiere Pro</span>
-                <span class="video-tag">After Effects</span>
-                <span class="video-tag">Color Grading</span>
-                <span class="video-tag">Motion Graphics</span>
-              </div>
-              <div class="video-stats">
-                <span><i class="fas fa-clock"></i> 3:45 min</span>
-                <span><i class="fas fa-calendar"></i> Dec 2024</span>
-                <span><i class="fas fa-film"></i> 4K Resolution</span>
-              </div>
-            </div>
+              <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener">Live Project</a>
+            </article>
+            <article class="card">
+              <h3>System Tools Demo</h3>
+              <p>
+                Designed an operations-focused interface for handling process and
+                tooling workflows with clear UX states.
+              </p>
+              <a class="inline-link" href="system-tools-demo.html">Open Demo</a>
+            </article>
+            <article class="card">
+              <h3>Portfolio Infrastructure</h3>
+              <p>
+                Structured content, performance optimizations, and deploy-ready
+                front-end architecture.
+              </p>
+              <a class="inline-link" href="portfolio.html">See Details</a>
+            </article>
+            <article class="card">
+              <h3>Babcock Publishing Platform</h3>
+              <p>
+                Delivered a publishing-focused website with scalable page
+                structure and production deployment.
+              </p>
+              <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener">Live Project</a>
+            </article>
+            <article class="card">
+              <h3>Interior Design Web Experience</h3>
+              <p>
+                Built a polished visual web experience for an interior brand
+                with responsive layouts and lead-oriented pages.
+              </p>
+              <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener">Live Project</a>
+            </article>
+            <article class="card">
+              <h3>Remote Engineering Delivery</h3>
+              <p>
+                Consistently delivered remote projects end-to-end, from planning
+                and design to deployment and optimization.
+              </p>
+              <a class="inline-link" href="portfolio.html#timeline">View Experience</a>
+            </article>
           </div>
-
-          <!-- Video 2 -->
-          <div class="video-item">
-            <div class="video-player">
-              <div class="video-placeholder" data-video-id="social_media_reel">
-                <i class="fas fa-play-circle"></i>
-                <div
-                  class="video-thumbnail"
-                  style="
-                    background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=800&q=80');
-                  "></div>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Social Media Reel</h3>
-              <p>
-                Engaging social media content with dynamic transitions, text
-                animations, and trending audio
-              </p>
-              <div class="video-tags">
-                <span class="video-tag">Final Cut Pro</span>
-                <span class="video-tag">Motion Graphics</span>
-                <span class="video-tag">Sound Design</span>
-                <span class="video-tag">Optimized for Mobile</span>
-              </div>
-              <div class="video-stats">
-                <span><i class="fas fa-clock"></i> 1:30 min</span>
-                <span><i class="fas fa-calendar"></i> Nov 2024</span>
-                <span><i class="fas fa-film"></i> 1080p Vertical</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video 3 -->
-          <div class="video-item">
-            <div class="video-player">
-              <div class="video-placeholder" data-video-id="event_highlights">
-                <i class="fas fa-play-circle"></i>
-                <div
-                  class="video-thumbnail"
-                  style="
-                    background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80');
-                  "></div>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Event Highlights</h3>
-              <p>
-                Multi-camera event coverage with seamless editing, audio
-                synchronization, and highlight compilation
-              </p>
-              <div class="video-tags">
-                <span class="video-tag">DaVinci Resolve</span>
-                <span class="video-tag">Multi-cam Editing</span>
-                <span class="video-tag">Audio Mixing</span>
-                <span class="video-tag">Highlights Compilation</span>
-              </div>
-              <div class="video-stats">
-                <span><i class="fas fa-clock"></i> 5:20 min</span>
-                <span><i class="fas fa-calendar"></i> Oct 2024</span>
-                <span><i class="fas fa-film"></i> 4K HDR</span>
-              </div>
-            </div>
+          <div class="center-cta">
+            <a class="btn" href="portfolio.html">View Full Portfolio</a>
           </div>
         </div>
+      </section>
 
-        <!-- Video Editing Services -->
-        <div class="video-services">
-          <h3
-            style="
-              text-align: center;
-              margin: 50px 0 30px;
-              color: var(--accent);
-            ">
-            Video Editing Services
-          </h3>
-          <div class="services-grid">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <h4>Corporate Videos</h4>
-              <ul>
-                <li>Company presentations</li>
-                <li>Product demos</li>
-                <li>Training videos</li>
-                <li>Brand storytelling</li>
-              </ul>
-            </div>
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fas fa-hashtag"></i>
-              </div>
-              <h4>Social Media Content</h4>
-              <ul>
-                <li>Instagram Reels/TikToks</li>
-                <li>YouTube Shorts</li>
-                <li>Facebook Videos</li>
-                <li>Platform optimization</li>
-              </ul>
-            </div>
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fas fa-calendar-alt"></i>
-              </div>
-              <h4>Event Coverage</h4>
-              <ul>
-                <li>Wedding videos</li>
-                <li>Conference highlights</li>
-                <li>Ceremony coverage</li>
-                <li>After-movie creation</li>
-              </ul>
-            </div>
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <h4>Post-Production</h4>
-              <ul>
-                <li>Color correction</li>
-                <li>Audio enhancement</li>
-                <li>Motion graphics</li>
-                <li>Special effects</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Contact for Video Services -->
-        <div class="video-contact-cta">
-          <div class="cta-content">
-            <h3>
-              <i class="fas fa-video"></i> Need Professional Video Editing?
-            </h3>
-            <p>Let's discuss your project and bring your vision to life</p>
-            <div class="cta-buttons">
-              <a href="#contact" class="btn">
-                <i class="fas fa-envelope"></i> Contact Me
-              </a>
+      <section class="section" id="quick-links">
+        <div class="container reveal">
+          <p class="eyebrow">Quick Links</p>
+          <div class="cards">
+            <article class="card">
+              <h3>Official CV</h3>
+              <p>Open your complete CV profile page and credentials.</p>
+              <a class="inline-link" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">Open CV</a>
+            </article>
+            <article class="card">
+              <h3>CV Download Page</h3>
+              <p>Direct download route for recruiters and hiring teams.</p>
+              <a class="inline-link" href="cv-download.html" target="_blank" rel="noopener">Download Route</a>
+            </article>
+            <article class="card">
+              <h3>WhatsApp Contact</h3>
+              <p>Start a direct project conversation on WhatsApp.</p>
               <a
-                href="https://wa.me/2348069383370?text=Hello%20Solomon,%20I%20need%20video%20editing%20services"
-                class="btn btn-whatsapp"
+                class="inline-link"
+                href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%20want%20to%20work%20with%20you"
                 target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i> WhatsApp Now
-              </a>
-            </div>
+                rel="noopener">Start Chat</a>
+            </article>
+            <article class="card">
+              <h3>Email Contact</h3>
+              <p>Reach me directly for job opportunities and project work.</p>
+              <a class="inline-link" href="mailto:solomonadiele1@gmail.com">solomonadiele1@gmail.com</a>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Hard Skills</h3>
-            <ul class="skill-list">
-              <li><i class="fas fa-check"></i> Full-Stack Development</li>
-              <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
-              <li><i class="fas fa-check"></i> Node.js & Express</li>
-              <li><i class="fas fa-check"></i> MySQL & Database Management</li>
-              <li>
-                <i class="fas fa-check"></i> RESTful API Development With VS
-                Code
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Deployment Tools (Railway, Vercel,
-                Render, Netlify)
-              </li>
-              <li><i class="fas fa-check"></i> GitHub Version Control</li>
-              <li>
-                <i class="fas fa-check"></i> Responsive Web Design Tools/Apps
-              </li>
-              <li><i class="fas fa-check"></i> Digital Tool Proficiency</li>
-              <li>
-                <i class="fas fa-check"></i> Video Editing & Post-production
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Adobe Premiere Pro, After Effects,
-                DaVinci Resolve
-              </li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Soft Skills</h3>
-            <ul class="skill-list">
-              <li><i class="fas fa-check"></i> Team Leadership</li>
-              <li><i class="fas fa-check"></i> Mentoring & Development</li>
-              <li>
-                <i class="fas fa-check"></i> Communication and Problem Solving
-              </li>
-              <li><i class="fas fa-check"></i> Project Management</li>
-              <li>
-                <i class="fas fa-check"></i> Agile Methodology and Time
-                Management
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Virtual Collaboration and Remote
-                Communication
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Independent Work Ethic and
-                Self-Motivation
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Creative Storytelling & Visual
-                Communication
-              </li>
-              <li>
-                <i class="fas fa-check"></i> Time Management for Project
-                Deadlines
-              </li>
-            </ul>
-          </div>
+    <footer class="site-footer" id="contact">
+      <div class="container footer-wrap reveal">
+        <div>
+          <h3>Let’s Build Something Valuable</h3>
+          <p>solomonadiele1@gmail.com | +234 806 938 3370</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-      <div class="container">
-        <h2>Experiences</h2>
-        <div class="timeline">
-          <!-- Remote Work Section -->
-          <div class="timeline-item remote-work">
-            <div class="timeline-content">
-              <div class="remote-badge">
-                <i class="fas fa-laptop-house"></i> Remote Work
-              </div>
-              <span class="timeline-date">June 2025 - Present</span>
-              <h3>Pure Pleasure Building and Interior Concept LTD</h3>
-              <h4>Full-Stack Developer</h4>
-              <p>
-                Working remotely to develop web applications and digital
-                solutions for interior design projects.
-              </p>
-              <div class="remote-highlights">
-                <h5>Key Accomplishments:</h5>
-                <ul class="experience-details">
-                  <li>
-                    Built a responsive web application from concept to
-                    deployment
-                  </li>
-                  <li>
-                    Optimized web application performance, achieving 40% faster
-                    page load times
-                  </li>
-                  <li>
-                    Resulted in improved user engagement and 15% lower bounce
-                    rates
-                  </li>
-                  <li>
-                    Enhanced mobile experience with responsive design
-                    optimizations
-                  </li>
-                </ul>
-              </div>
-              <div class="tech-stack">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Git</span>
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">July 2019 - Jan 2020</span>
-              <h3>Rivers State Television (RSTV)</h3>
-              <h4>Staff Worker - ICT Department</h4>
-              <p>
-                Worked in the ICT department, gaining practical experience in
-                technology operations and support.
-              </p>
-            </div>
-          </div>
+        <div class="socials">
+          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/2348069383370" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="http://linkedin.com/in/adiele-solomon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/AdieleSolomon" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/share/16t48ctFC7/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="tel:+2348069383370" aria-label="Phone"><i class="fas fa-phone"></i></a>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Location</h3>
-                <p>Abia State, Nigeria</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Phone</h3>
-                <p>
-                  <a
-                    href="tel:08069383370"
-                    class="clickable-phone"
-                    title="Click to call"
-                    >08069383370</a
-                  >,
-                  <a
-                    href="tel:08127890779"
-                    class="clickable-phone"
-                    title="Click to call"
-                    >08127890779</a
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Email</h3>
-                <p>
-                  <a
-                    href="mailto:solomonadiele1@gmail.com"
-                    class="clickable-email"
-                    title="Click to send email"
-                    >solomonadiele1@gmail.com</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="user_name"
-                  name="user_name"
-                  class="form-control"
-                  placeholder="Your Name"
-                  required />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="user_email"
-                  name="user_email"
-                  class="form-control"
-                  placeholder="Your Email"
-                  required />
-              </div>
-              <div class="form-group">
-                <input
-                  type="number"
-                  id="user_phone"
-                  name="user_phone"
-                  class="form-control"
-                  placeholder="Your Phone Number"
-                  required />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="form-control"
-                  placeholder="Subject"
-                  required />
-              </div>
-              <div class="form-group">
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-control"
-                  placeholder="Your Message"
-                  required></textarea>
-              </div>
-              <div class="contact-form-buttons">
-                <button type="button" class="btn" id="emailSubmitBtn">
-                  <i class="fas fa-envelope"></i> Send via Email
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-whatsapp"
-                  id="whatsappSubmitBtn">
-                  <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Video Modal -->
-    <div class="video-modal" id="videoModal">
-      <div class="video-modal-content">
-        <button class="video-modal-close">&times;</button>
-        <div class="video-container" id="videoContainer">
-          <!-- Video player will be inserted here -->
-        </div>
-        <div class="video-modal-info" id="videoModalInfo"></div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-logo">
-          SOLOMON <span>CHIMEREUCHEYA</span> <span>ADIELE</span>
-        </div>
-        <div class="social-links">
-          <a
-            href="http://linkedin.com/in/adiele-solomon"
-            class="social-link"
-            title="Connect on LinkedIn"
-            aria-label="Connect on LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a
-            href="https://github.com/AdieleSolomon"
-            class="social-link"
-            title="View GitHub Profile"
-            aria-label="View GitHub Profile"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09"
-            class="social-link"
-            title="Follow on Twitter"
-            aria-label="Follow on Twitter"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            href="https://www.facebook.com/share/16t48ctFC7/"
-            class="social-link"
-            title="Follow on Facebook"
-            aria-label="Follow on Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="cv-download.html"
-            class="social-link"
-            title="download real cv"
-            aria-label="download real cv"
-            ><i class="fas fa-file-download"></i
-          ></a>
-        </div>
-        <p class="copyright">
-          &copy; 2025 Solomon Adiele. All Rights Reserved.
-        </p>
       </div>
     </footer>
 
