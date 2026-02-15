@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Building Performant Websites - practical techniques for speed, reliability, and Lighthouse performance by Solomon Adiele." />
+    <meta name="author" content="Solomon Adiele" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>Building Performant Websites | Solomon Adiele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">SOLO<span>MON</span></a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#thoughts">Thoughts</a>
+          <a href="portfolio.html">Portfolio</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="index.html#thoughts">Thoughts</a>
+        <a href="portfolio.html">Portfolio</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section page-head">
+        <div class="container reveal">
+          <p class="eyebrow">March 2024</p>
+          <h1 class="page-title">Building Performant Websites</h1>
+          <p class="lead">Practical techniques I use to achieve speed, stability, and better SEO outcomes.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reveal">
+          <article class="card">
+            <p>
+              Performance is not only about Lighthouse scores. It is about how quickly users can trust that a page
+              is usable, how stable the layout feels while loading, and how responsive interactions are once the page
+              is visible. The best-performing websites reduce user effort at every stage.
+            </p>
+            <h3>1. Define performance budgets early</h3>
+            <p>
+              I start each project with rough budgets for page weight, JavaScript size, image sizes, and render time.
+              This prevents late-stage surprises where design and feature decisions have already made the site heavy.
+            </p>
+            <h3>2. Optimize the critical rendering path</h3>
+            <p>
+              Above-the-fold content should load first. I prioritize main CSS, defer non-critical scripts, and preload
+              high-value assets like hero images. This shortens time to meaningful paint and improves user confidence.
+            </p>
+            <h3>3. Be strict with image handling</h3>
+            <p>
+              Images are often the largest assets. I compress, size correctly, lazy-load below-the-fold images, and
+              avoid oversized backgrounds. For portfolios, this keeps visual quality high without sacrificing speed.
+            </p>
+            <h3>4. Reduce JavaScript execution cost</h3>
+            <p>
+              The cost of JavaScript is not just file size. Parsing and execution can block interaction. I remove
+              unnecessary libraries, split concerns, and keep features framework-light when possible.
+            </p>
+            <h3>5. Build for stability and accessibility</h3>
+            <p>
+              Visual stability matters. I reserve dimensions for media to reduce layout shift, add keyboard-visible
+              focus states, and keep navigation predictable. These decisions improve both UX and Core Web Vitals.
+            </p>
+            <h3>6. Measure continuously</h3>
+            <p>
+              Performance is a process, not a one-time task. I test during development, after deployment, and after
+              content updates. This catches regressions early and keeps production quality consistent over time.
+            </p>
+            <p>
+              A performant website creates business value: stronger engagement, better conversion rates, and improved
+              search visibility. Speed is not a luxury feature. It is foundational product quality.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap reveal">
+        <div>
+          <h3>Read More Insights</h3>
+          <p>Return to the Thoughts section for more practical engineering notes.</p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-small" href="index.html#thoughts">Back to Thoughts</a>
+          <a class="btn btn-small btn-ghost" href="portfolio.html">Open Portfolio</a>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

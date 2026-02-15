@@ -18,6 +18,9 @@
     <meta
       property="og:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="pinterest-rich-pin" content="true" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Solomon Adiele | Portfolio" />
     <meta
@@ -26,9 +29,15 @@
     <meta
       name="twitter:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Solomon Adiele | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.example.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
@@ -36,8 +45,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="grain" aria-hidden="true"></div>
     <div class="orb orb-1" aria-hidden="true"></div>
 
@@ -48,6 +59,7 @@
           <a href="index.html">Home</a>
           <a href="#projects">Projects</a>
           <a href="#stack">Stack</a>
+          <a href="#process">Process</a>
           <a href="#timeline">Experience</a>
           <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
         </nav>
@@ -59,26 +71,48 @@
         <a href="index.html">Home</a>
         <a href="#projects">Projects</a>
         <a href="#stack">Stack</a>
+        <a href="#process">Process</a>
         <a href="#timeline">Experience</a>
         <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="section page-head">
-        <div class="container reveal">
-          <p class="eyebrow">Portfolio</p>
-          <h1 class="page-title">Selected Work & Engineering Impact</h1>
-          <p class="lead">
-            Real projects focused on reliability, usability, and measurable
-            outcomes.
-          </p>
+        <div class="container hero-grid">
+          <div class="reveal">
+            <p class="eyebrow">Portfolio</p>
+            <h1 class="page-title">Selected Work & Engineering Impact</h1>
+            <p class="lead">
+              Real projects focused on reliability, usability, and measurable
+              outcomes.
+            </p>
+          </div>
+          <aside class="hero-panel reveal-delay">
+            <img
+              id="heroProfileImage"
+              src="assets/images/profile1.jpg"
+              alt="Solomon Adiele portfolio hero"
+              width="760"
+              height="1013"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async" />
+          </aside>
         </div>
       </section>
 
       <section class="section" id="projects">
-        <div class="container project-grid reveal">
-          <article class="project-card">
+        <div class="container reveal">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+          </div>
+
+          <div class="project-grid">
+          <article class="project-card" data-category="fullstack">
             <img src="assets/images/portfolio/1u4a1769-thumb.jpg" alt="Church project" loading="lazy" decoding="async" />
             <div>
               <h3>Throne of Grace Church Website</h3>
@@ -91,7 +125,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="tools">
             <img src="assets/images/portfolio/1u4a1781-thumb.jpg" alt="System tools" loading="lazy" decoding="async" />
             <div>
               <h3>System Tools Demo</h3>
@@ -104,7 +138,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="frontend">
             <img src="assets/images/portfolio/1u4a1875-thumb.jpg" alt="Portfolio engineering" loading="lazy" decoding="async" />
             <div>
               <h3>Responsive Portfolio Website</h3>
@@ -117,7 +151,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="frontend">
             <img src="assets/images/portfolio/1u4a1754-thumb.jpg" alt="Interior design website" loading="lazy" decoding="async" />
             <div>
               <h3>Pure Pleasure Interior Design Website</h3>
@@ -130,7 +164,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="fullstack">
             <img src="assets/images/portfolio/1u4a1885-thumb.jpg" alt="Babcock Publishing website" loading="lazy" decoding="async" />
             <div>
               <h3>Babcock Publishing Website</h3>
@@ -142,6 +176,7 @@
               </div>
             </div>
           </article>
+          </div>
         </div>
       </section>
 
@@ -150,6 +185,35 @@
           <p class="eyebrow">Stack</p>
           <div class="skills">
             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span><span>Deployment</span><span>Video Editing</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container reveal">
+          <p class="eyebrow">How I work</p>
+          <h2>My development process</h2>
+          <div class="process-steps">
+            <article class="step">
+              <div class="step-number">1</div>
+              <h3>Discovery</h3>
+              <p>Understanding requirements, goals, and user needs</p>
+            </article>
+            <article class="step">
+              <div class="step-number">2</div>
+              <h3>Planning</h3>
+              <p>Architecture, technology selection, and timeline</p>
+            </article>
+            <article class="step">
+              <div class="step-number">3</div>
+              <h3>Development</h3>
+              <p>Iterative building with regular check-ins</p>
+            </article>
+            <article class="step">
+              <div class="step-number">4</div>
+              <h3>Delivery</h3>
+              <p>Testing, deployment, and ongoing support</p>
+            </article>
           </div>
         </div>
       </section>
@@ -169,13 +233,35 @@
           </div>
         </div>
       </section>
+
+      <section class="section cta-section">
+        <div class="container reveal text-center">
+          <h2>Ready to build something great?</h2>
+          <p class="lead">Let's discuss your project and create something amazing together.</p>
+          <a
+            href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%27m%20interested%20in%20working%20with%20you%20on%20a%20project."
+            class="btn btn-large"
+            target="_blank"
+            rel="noopener"
+            >Start a Conversation</a
+          >
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
       <div class="container footer-wrap reveal">
         <div>
           <h3>Back to Personal Website</h3>
           <p>Use the home page as your brand-first entry point.</p>
+        </div>
+        <div class="newsletter">
+          <h3>Stay updated</h3>
+          <p>Get notified about new projects and articles</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn-small">Subscribe</button>
+          </form>
         </div>
         <div class="socials">
           <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener" aria-label="CV"><i class="fas fa-file-alt"></i></a>
@@ -186,6 +272,15 @@
       </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="js/script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then((registration) => registration.update());
+      }
+    </script>
   </body>
 </html>

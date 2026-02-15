@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,10 +17,15 @@
     <meta
       property="og:description"
       content="Full-Stack Developer portfolio featuring projects, experience, and CV." />
-    <meta property="og:url" content="https://adiele-solomon-github-io.vercel.app/" />
+    <meta
+      property="og:url"
+      content="https://adiele-solomon-github-io.vercel.app/" />
     <meta
       property="og:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="pinterest-rich-pin" content="true" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Solomon Adiele | Personal Website" />
     <meta
@@ -32,14 +37,20 @@
     <meta
       name="google-site-verification"
       content="cNif3_RpinazDFWrunZlfPVG1DqiIwMQ0AKZOj5D_lE" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Solomon Adiele | Personal Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.example.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
     <link
       rel="preload"
       as="image"
-      href="assets/images/profile1-hero.jpg"
-      imagesrcset="assets/images/profile1-hero.jpg 1x, assets/images/profile1.jpg 2x" />
+      href="assets/images/profile1.jpg"
+      imagesrcset="assets/images/profile1.jpg 1x, assets/images/profile.jpg 2x" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
@@ -47,6 +58,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -65,19 +79,39 @@
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="grain" aria-hidden="true"></div>
     <div class="orb orb-1" aria-hidden="true"></div>
     <div class="orb orb-2" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">SOL<span>OMON</span></a>
+        <a class="brand" href="index.html">SOLO<span>MON</span></a>
         <nav class="main-nav">
           <a href="#about">About</a>
-          <a href="#highlights">Highlights</a>
           <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
           <a href="#contact">Contact</a>
           <a class="btn btn-small" href="portfolio.html">Open Portfolio</a>
+          <div class="section-menu-wrap">
+            <button
+              class="section-menu-toggle"
+              id="sectionMenuToggle"
+              aria-label="Open other tabs"
+              aria-expanded="false"
+              aria-controls="sectionMenu">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="section-menu-label">Other Tabs</span>
+            </button>
+            <div class="section-menu" id="sectionMenu">
+              <a href="#tech-stack">Tech Stack</a>
+              <a href="#highlights">Highlights</a>
+              <a href="#process">Process</a>
+              <a href="#testimonials">Testimonials</a>
+              <a href="#thoughts">Thoughts</a>
+            </div>
+          </div>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -85,14 +119,18 @@
       </div>
       <nav class="mobile-nav" id="mobileNav">
         <a href="#about">About</a>
+        <a href="#tech-stack">Tech Stack</a>
         <a href="#highlights">Highlights</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#thoughts">Thoughts</a>
         <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
         <a href="#contact">Contact</a>
         <a class="btn btn-small" href="portfolio.html">Open Portfolio</a>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero section" id="home">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
@@ -107,15 +145,21 @@
             </p>
             <div class="hero-cta">
               <a class="btn" href="portfolio.html">Enter Portfolio</a>
-              <a class="btn btn-ghost" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">View CV</a>
+              <a
+                class="btn btn-ghost"
+                href="Solomon-Adiele-CV.html"
+                target="_blank"
+                rel="noopener"
+                >View CV</a
+              >
               <a class="btn btn-ghost" href="#contact">Book a Call</a>
             </div>
           </div>
 
           <aside class="hero-panel reveal-delay">
             <img
-              src="assets/images/profile1-hero.jpg"
-              srcset="assets/images/profile1-hero.jpg 1x, assets/images/profile1.jpg 2x"
+              id="heroProfileImage"
+              src="assets/images/profile1.jpg"
               alt="Solomon Adiele"
               width="760"
               height="1013"
@@ -163,7 +207,9 @@
               </div>
               <div class="info-row">
                 <span>Email</span>
-                <a href="mailto:solomonadiele1@gmail.com">solomonadiele1@gmail.com</a>
+                <a href="mailto:solomonadiele1@gmail.com"
+                  >solomonadiele1@gmail.com</a
+                >
               </div>
               <div class="info-row">
                 <span>Phone</span>
@@ -178,9 +224,51 @@
               </div>
             </div>
             <div class="cv-actions">
-              <a class="btn" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">View CV Page</a>
-              <a class="btn btn-ghost" href="cv-download.html" target="_blank" rel="noopener">Download CV</a>
+              <a
+                class="btn"
+                href="Solomon-Adiele-CV.html"
+                target="_blank"
+                rel="noopener"
+                >View CV Page</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="cv-download.html"
+                target="_blank"
+                rel="noopener"
+                >Download CV</a
+              >
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tech-stack">
+        <div class="container reveal">
+          <p class="eyebrow">Technical Expertise</p>
+          <h2>Technologies I work with</h2>
+          <div class="skills-grid">
+            <article class="skill-category">
+              <h3>Frontend</h3>
+              <div class="skills">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span
+                ><span>React</span><span>Responsive Design</span>
+              </div>
+            </article>
+            <article class="skill-category">
+              <h3>Backend</h3>
+              <div class="skills">
+                <span>Node.js</span><span>Express</span><span>REST APIs</span
+                ><span>MySQL</span>
+              </div>
+            </article>
+            <article class="skill-category">
+              <h3>Tools & Workflow</h3>
+              <div class="skills">
+                <span>Git</span><span>GitHub</span><span>Vercel</span
+                ><span>VS Code</span><span>Chrome DevTools</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -190,22 +278,64 @@
           <p class="eyebrow">Selected Highlights</p>
           <div class="cards">
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="https://throne-of-grace.vercel.app/"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://throne-of-grace.vercel.app/"
+                  alt="Homepage preview of Church Management Platform"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>Church Management Platform</h3>
               <p>
                 Built multi-page flows, event modules, and member interactions
                 with responsive-first implementation.
               </p>
-              <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener">Live Project</a>
+              <a
+                class="inline-link"
+                href="https://throne-of-grace.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                >Live Project</a
+              >
             </article>
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="system-tools-demo.html"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://adiele-solomon-github-io.vercel.app/system-tools-demo.html"
+                  alt="Homepage preview of System Tools Demo"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>System Tools Demo</h3>
               <p>
-                Designed an operations-focused interface for handling process and
-                tooling workflows with clear UX states.
+                Designed an operations-focused interface for handling process
+                and tooling workflows with clear UX states.
               </p>
               <a class="inline-link" href="system-tools-demo.html">Open Demo</a>
             </article>
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="portfolio.html"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://adiele-solomon-github-io.vercel.app/portfolio.html"
+                  alt="Homepage preview of Portfolio Infrastructure"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>Portfolio Infrastructure</h3>
               <p>
                 Structured content, performance optimizations, and deploy-ready
@@ -214,32 +344,155 @@
               <a class="inline-link" href="portfolio.html">See Details</a>
             </article>
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="https://babcock-publishing.vercel.app"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://babcock-publishing.vercel.app"
+                  alt="Homepage preview of Babcock Publishing Platform"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>Babcock Publishing Platform</h3>
               <p>
                 Delivered a publishing-focused website with scalable page
                 structure and production deployment.
               </p>
-              <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener">Live Project</a>
+              <a
+                class="inline-link"
+                href="https://babcock-publishing.vercel.app"
+                target="_blank"
+                rel="noopener"
+                >Live Project</a
+              >
             </article>
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="https://interio-design-static.vercel.app/"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://interio-design-static.vercel.app/"
+                  alt="Homepage preview of Interior Design Web Experience"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>Interior Design Web Experience</h3>
               <p>
                 Built a polished visual web experience for an interior brand
                 with responsive layouts and lead-oriented pages.
               </p>
-              <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener">Live Project</a>
+              <a
+                class="inline-link"
+                href="https://interio-design-static.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                >Live Project</a
+              >
             </article>
             <article class="card">
+              <a
+                class="card-thumb-link"
+                href="portfolio.html#timeline"
+                target="_blank"
+                rel="noopener">
+                <img
+                  class="card-thumb"
+                  src="https://image.thum.io/get/width/1200/https://adiele-solomon-github-io.vercel.app/portfolio.html"
+                  alt="Homepage preview of remote engineering portfolio work"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
               <h3>Remote Engineering Delivery</h3>
               <p>
                 Consistently delivered remote projects end-to-end, from planning
                 and design to deployment and optimization.
               </p>
-              <a class="inline-link" href="portfolio.html#timeline">View Experience</a>
+              <a class="inline-link" href="portfolio.html#timeline"
+                >View Experience</a
+              >
             </article>
           </div>
           <div class="center-cta">
             <a class="btn" href="portfolio.html">View Full Portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="container reveal">
+          <p class="eyebrow">Testimonials</p>
+          <h2>What clients say</h2>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <div class="quote">"</div>
+              <p>
+                Solomon delivered our church website with exceptional attention
+                to detail. The project was completed on time and exceeded our
+                expectations.
+              </p>
+              <div class="client">
+                <strong>Church Leadership</strong>
+                <span>Throne of Grace</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="quote">"</div>
+              <p>
+                Working with Solomon remotely was seamless. His technical
+                expertise and communication made our interior design website
+                stand out.
+              </p>
+              <div class="client">
+                <strong>Client</strong>
+                <span>Pure Pleasure Interior</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="quote">"</div>
+              <p>
+                Solomon delivered our publishing platform with a clean user
+                experience, strong structure, and dependable deployment support
+                from start to finish.
+              </p>
+              <div class="client">
+                <strong>Editorial Team</strong>
+                <span>Babcock Publishing</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="process">
+        <div class="container reveal">
+          <p class="eyebrow">How I work</p>
+          <h2>My development process</h2>
+          <div class="process-steps">
+            <article class="step">
+              <div class="step-number">1</div>
+              <h3>Discovery</h3>
+              <p>Understanding requirements, goals, and user needs</p>
+            </article>
+            <article class="step">
+              <div class="step-number">2</div>
+              <h3>Planning</h3>
+              <p>Architecture, technology selection, and timeline</p>
+            </article>
+            <article class="step">
+              <div class="step-number">3</div>
+              <h3>Development</h3>
+              <p>Iterative building with regular check-ins</p>
+            </article>
+            <article class="step">
+              <div class="step-number">4</div>
+              <h3>Delivery</h3>
+              <p>Testing, deployment, and ongoing support</p>
+            </article>
           </div>
         </div>
       </section>
@@ -251,12 +504,24 @@
             <article class="card">
               <h3>Official CV</h3>
               <p>Open your complete CV profile page and credentials.</p>
-              <a class="inline-link" href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">Open CV</a>
+              <a
+                class="inline-link"
+                href="Solomon-Adiele-CV.html"
+                target="_blank"
+                rel="noopener"
+                >Open CV</a
+              >
             </article>
             <article class="card">
               <h3>CV Download Page</h3>
               <p>Direct download route for recruiters and hiring teams.</p>
-              <a class="inline-link" href="cv-download.html" target="_blank" rel="noopener">Download Route</a>
+              <a
+                class="inline-link"
+                href="cv-download.html"
+                target="_blank"
+                rel="noopener"
+                >Download Route</a
+              >
             </article>
             <article class="card">
               <h3>WhatsApp Contact</h3>
@@ -265,14 +530,83 @@
                 class="inline-link"
                 href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%20want%20to%20work%20with%20you"
                 target="_blank"
-                rel="noopener">Start Chat</a>
+                rel="noopener"
+                >Start Chat</a
+              >
             </article>
             <article class="card">
               <h3>Email Contact</h3>
               <p>Reach me directly for job opportunities and project work.</p>
-              <a class="inline-link" href="mailto:solomonadiele1@gmail.com">solomonadiele1@gmail.com</a>
+              <a class="inline-link" href="mailto:solomonadiele1@gmail.com"
+                >solomonadiele1@gmail.com</a
+              >
+            </article>
+            <article class="card">
+              <h3>LinkedIn Profile</h3>
+              <p>Connect with me professionally on LinkedIn.</p>
+              <a
+                class="inline-link"
+                href="http://linkedin.com/in/adiele-solomon"
+                target="_blank"
+                rel="noopener"
+                >Open LinkedIn</a
+              >
+            </article>
+            <article class="card">
+              <h3>Facebook Handle</h3>
+              <p>Follow my updates and reach out on Facebook.</p>
+              <a
+                class="inline-link"
+                href="https://www.facebook.com/share/16t48ctFC7/"
+                target="_blank"
+                rel="noopener"
+                >Open Facebook</a
+              >
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="thoughts">
+        <div class="container reveal">
+          <p class="eyebrow">Latest Thoughts</p>
+          <h2>Writing & insights</h2>
+          <div class="cards">
+            <article class="card">
+              <span class="post-date">March 2024</span>
+              <h3>Building Performant Websites</h3>
+              <p>
+                Optimization techniques I use to achieve 90+ Lighthouse scores
+                across performance, accessibility, and SEO.
+              </p>
+              <a class="inline-link" href="building-performant-websites.html">Read Article →</a>
+            </article>
+            <article class="card">
+              <span class="post-date">February 2024</span>
+              <h3>Remote Collaboration Tips</h3>
+              <p>
+                How I maintain productivity while working with distributed teams
+                and keep delivery quality high.
+              </p>
+              <a class="inline-link" href="remote-collaboration-tips.html">Read Article →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container reveal text-center">
+          <h2>Ready to build something great?</h2>
+          <p class="lead">
+            Let's discuss your project and create something amazing together.
+          </p>
+          <a
+            href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%27m%20interested%20in%20working%20with%20you%20on%20a%20project."
+            class="btn btn-large"
+            target="_blank"
+            rel="noopener"
+            >Start a Conversation</a
+          >
         </div>
       </section>
     </main>
@@ -283,18 +617,71 @@
           <h3>Let’s Build Something Valuable</h3>
           <p>solomonadiele1@gmail.com | +234 806 938 3370</p>
         </div>
+        <div class="newsletter">
+          <h3>Stay updated</h3>
+          <p>Get notified about new projects and articles</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn-small">Subscribe</button>
+          </form>
+        </div>
         <div class="socials">
-          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://wa.me/2348069383370" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="http://linkedin.com/in/adiele-solomon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/AdieleSolomon" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.facebook.com/share/16t48ctFC7/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="tel:+2348069383370" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://wa.me/2348069383370"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a
+            href="http://linkedin.com/in/adiele-solomon"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://github.com/AdieleSolomon"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://x.com/Solobext?t=auuUZd_W47zynYC4gKG8pA&s=09"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/share/16t48ctFC7/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="tel:+2348069383370" aria-label="Phone"
+            ><i class="fas fa-phone"></i
+          ></a>
         </div>
       </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="js/script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => registration.update());
+      }
+    </script>
   </body>
 </html>
