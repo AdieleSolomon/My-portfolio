@@ -1,4 +1,5 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
+Disallow: /offline.html
 
 Sitemap: https://adiele-solomon-github-io.vercel.app/sitemap.xml

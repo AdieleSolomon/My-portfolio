@@ -8,6 +8,9 @@
       content="Portfolio projects by Solomon Adiele: web applications, system tools, and production-ready digital platforms." />
     <meta name="author" content="Solomon Adiele" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#1a0b2e" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://adiele-solomon-github-io.vercel.app/portfolio.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Solomon Adiele | Portfolio" />
@@ -29,14 +32,11 @@
     <meta
       name="twitter:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Solomon Adiele | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://analytics.example.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preload" href="assets/css/style.css" as="style" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
@@ -45,7 +45,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -61,9 +60,14 @@
           <a href="#stack">Stack</a>
           <a href="#process">Process</a>
           <a href="#timeline">Experience</a>
-          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
+          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer">CV</a>
         </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-controls="mobileNav"
+          aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -73,7 +77,7 @@
         <a href="#stack">Stack</a>
         <a href="#process">Process</a>
         <a href="#timeline">Experience</a>
-        <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener">CV</a>
+        <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer">CV</a>
       </nav>
     </header>
 
@@ -119,8 +123,8 @@
               <p>End-to-end website with content structure, events, and engagement pages.</p>
               <div class="tags"><span>Frontend</span><span>Responsive</span><span>UX</span></div>
               <div class="project-actions">
-                <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/Throne-Of-Grace/blob/main/index.html" target="_blank" rel="noopener">Source Code</a>
+                <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="inline-link" href="https://github.com/AdieleSolomon/Throne-Of-Grace/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
             </div>
           </article>
@@ -133,7 +137,7 @@
               <div class="tags"><span>JavaScript</span><span>UI States</span><span>Architecture</span></div>
               <div class="project-actions">
                 <a class="inline-link" href="system-tools-demo.html">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/My-portfolio/blob/main/system-tools-demo.html" target="_blank" rel="noopener">Source Code</a>
+                <a class="inline-link" href="https://github.com/AdieleSolomon/My-portfolio/blob/main/system-tools-demo.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
             </div>
           </article>
@@ -145,8 +149,8 @@
               <p>Modern personal website and portfolio system with motion and conversion-first CTA strategy.</p>
               <div class="tags"><span>Design System</span><span>Performance</span><span>SEO</span></div>
               <div class="project-actions">
-                <a class="inline-link" href="https://adiele-solomon-github-io.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html" target="_blank" rel="noopener">Source Code</a>
+                <a class="inline-link" href="https://adiele-solomon-github-io.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="inline-link" href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
             </div>
           </article>
@@ -158,8 +162,8 @@
               <p>Comprehensive interior design website built remotely with polished galleries and lead generation flow.</p>
               <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
               <div class="project-actions">
-                <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/Interio-design-static/blob/main/index.html" target="_blank" rel="noopener">Source Code</a>
+                <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="inline-link" href="https://github.com/AdieleSolomon/Interio-design-static/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
             </div>
           </article>
@@ -171,8 +175,8 @@
               <p>Publishing-focused web platform with modern layout and production-ready deployment.</p>
               <div class="tags"><span>Web Platform</span><span>Frontend</span><span>Deployment</span></div>
               <div class="project-actions">
-                <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/babcock-publishing" target="_blank" rel="noopener">Source Code</a>
+                <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="inline-link" href="https://github.com/AdieleSolomon/babcock-publishing" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
             </div>
           </article>
@@ -242,7 +246,7 @@
             href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%27m%20interested%20in%20working%20with%20you%20on%20a%20project."
             class="btn btn-large"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             >Start a Conversation</a
           >
         </div>
@@ -264,10 +268,10 @@
           </form>
         </div>
         <div class="socials">
-          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener" aria-label="CV"><i class="fas fa-file-alt"></i></a>
-          <a href="cv-download.html" target="_blank" rel="noopener" aria-label="Download CV"><i class="fas fa-file-download"></i></a>
+          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer" aria-label="CV"><i class="fas fa-file-alt"></i></a>
+          <a href="cv-download.html" target="_blank" rel="noopener noreferrer" aria-label="Download CV"><i class="fas fa-file-download"></i></a>
           <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://wa.me/2348069383370" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/2348069383370" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </footer>
@@ -277,10 +281,7 @@
     </button>
 
     <script src="js/script.js"></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js").then((registration) => registration.update());
-      }
-    </script>
   </body>
 </html>
+
+

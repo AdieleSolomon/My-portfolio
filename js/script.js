@@ -1,14 +1,50 @@
+const registerServiceWorker = async () => {
+  try {
+    const registration = await navigator.serviceWorker.register("/sw.js");
+    registration.update();
+  } catch (error) {
+    // Silent fail keeps the page functional even when SW is unavailable.
+  }
+};
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", registerServiceWorker);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle");
   const mobileNav = document.getElementById("mobileNav");
 
   if (menuToggle && mobileNav) {
-    menuToggle.addEventListener("click", () => {
-      mobileNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-controls", "mobileNav");
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    const setMobileMenuState = (isOpen) => {
+      mobileNav.classList.toggle("open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("nav-open", isOpen);
+    };
+
+    menuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const shouldOpen = !mobileNav.classList.contains("open");
+      setMobileMenuState(shouldOpen);
     });
 
     mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => mobileNav.classList.remove("open"));
+      link.addEventListener("click", () => setMobileMenuState(false));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        setMobileMenuState(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMobileMenuState(false);
+      }
     });
   }
 
@@ -33,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (event) => {
-      if (!sectionMenu.contains(event.target)) {
+      if (!sectionMenu.contains(event.target) && !sectionMenuToggle.contains(event.target)) {
         closeSectionMenu();
       }
     });
@@ -53,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
     );
 
     revealItems.forEach((item) => observer.observe(item));
@@ -63,38 +99,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const heroProfileImage = document.getElementById("heroProfileImage");
   if (heroProfileImage) {
-    const heroImages = [
-      "assets/images/profile1.jpg",
-      "assets/images/profile.jpg",
-      "assets/images/1U4A1754.JPG",
-      "assets/images/1U4A1769.JPG",
-      "assets/images/1U4A1781.JPG",
-      "assets/images/1U4A1875.JPG",
-      "assets/images/1U4A1885.JPG",
-    ];
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedData = Boolean(navigator.connection && navigator.connection.saveData);
 
-    let currentImageIndex = 0;
-    const switchHeroImage = () => {
-      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-      const nextImage = heroImages[currentImageIndex];
-      const imageLoader = new Image();
+    if (!prefersReducedMotion && !prefersReducedData) {
+      const heroImages = [
+        "assets/images/profile1.jpg",
+        "assets/images/profile.jpg",
+        "assets/images/1U4A1754.JPG",
+        "assets/images/1U4A1769.JPG",
+        "assets/images/1U4A1781.JPG",
+        "assets/images/1U4A1875.JPG",
+        "assets/images/1U4A1885.JPG",
+      ];
 
-      imageLoader.onload = () => {
-        heroProfileImage.style.opacity = "0";
-        window.setTimeout(() => {
-          heroProfileImage.src = nextImage;
+      let currentImageIndex = 0;
+      let rotationTimerId = null;
+
+      const switchHeroImage = () => {
+        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        const nextImage = heroImages[currentImageIndex];
+        const imageLoader = new Image();
+
+        imageLoader.onload = () => {
+          heroProfileImage.style.opacity = "0";
+          window.setTimeout(() => {
+            heroProfileImage.src = nextImage;
+            heroProfileImage.style.opacity = "1";
+          }, 220);
+        };
+
+        imageLoader.onerror = () => {
           heroProfileImage.style.opacity = "1";
-        }, 220);
+        };
+
+        imageLoader.src = nextImage;
       };
 
-      imageLoader.onerror = () => {
-        heroProfileImage.style.opacity = "1";
+      const startRotation = () => {
+        if (rotationTimerId !== null) return;
+        rotationTimerId = window.setInterval(switchHeroImage, 4500);
       };
 
-      imageLoader.src = nextImage;
-    };
+      const stopRotation = () => {
+        if (rotationTimerId === null) return;
+        window.clearInterval(rotationTimerId);
+        rotationTimerId = null;
+      };
 
-    window.setInterval(switchHeroImage, 4000);
+      startRotation();
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          stopRotation();
+          return;
+        }
+        startRotation();
+      });
+    }
   }
 
   const backToTopButton = document.getElementById("backToTop");
@@ -102,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBackToTop = () => {
       const shouldShow = window.scrollY > 420;
       backToTopButton.classList.toggle("show", shouldShow);
+      backToTopButton.setAttribute("aria-hidden", String(!shouldShow));
     };
 
     window.addEventListener("scroll", toggleBackToTop, { passive: true });
@@ -145,11 +208,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     filterButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.classList.contains("active")));
+
       button.addEventListener("click", () => {
         const selectedFilter = button.dataset.filter;
 
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        filterButtons.forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-pressed", "false");
+        });
+
         button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
 
         projectCards.forEach((card) => {
           const cardCategory = card.dataset.category;
@@ -165,4 +235,41 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const newsletterForms = document.querySelectorAll(".newsletter-form");
+  newsletterForms.forEach((form) => {
+    let feedback = form.parentElement.querySelector(".newsletter-feedback");
+
+    if (!feedback) {
+      feedback = document.createElement("p");
+      feedback.className = "newsletter-feedback";
+      feedback.setAttribute("aria-live", "polite");
+      form.parentElement.appendChild(feedback);
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const emailInput = form.querySelector("input[type='email']");
+
+      if (!emailInput || !emailInput.value.trim()) {
+        feedback.textContent = "Please provide an email address first.";
+        return;
+      }
+
+      if (!emailInput.checkValidity()) {
+        feedback.textContent = "Please enter a valid email address.";
+        return;
+      }
+
+      const emailAddress = emailInput.value.trim();
+      const subject = encodeURIComponent("Portfolio newsletter subscription");
+      const body = encodeURIComponent(
+        `Please add ${emailAddress} to Solomon Adiele's portfolio update list.`
+      );
+
+      feedback.textContent = "Opening your email app to confirm subscription...";
+      window.location.href = `mailto:solomonadiele1@gmail.com?subject=${subject}&body=${body}`;
+      form.reset();
+    });
+  });
 });

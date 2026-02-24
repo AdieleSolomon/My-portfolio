@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +8,14 @@
       content="Building Performant Websites - practical techniques for speed, reliability, and Lighthouse performance by Solomon Adiele." />
     <meta name="author" content="Solomon Adiele" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1a0b2e" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+    <link
+      rel="canonical"
+      href="https://adiele-solomon-github-io.vercel.app/building-performant-websites.html" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Building Performant Websites | Solomon Adiele</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +41,12 @@
           <a href="index.html#thoughts">Thoughts</a>
           <a href="portfolio.html">Portfolio</a>
         </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-controls="mobileNav"
+          aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -123,3 +133,4 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+

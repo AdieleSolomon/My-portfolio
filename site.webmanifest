@@ -1,0 +1,18 @@
+{
+  "name": "Solomon Adiele Portfolio",
+  "short_name": "Solomon",
+  "description": "Full-stack web developer portfolio, projects, and contact channels.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a0b2e",
+  "theme_color": "#1a0b2e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
