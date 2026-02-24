@@ -1,7 +1,32 @@
 const registerServiceWorker = async () => {
   try {
     const registration = await navigator.serviceWorker.register("/sw.js");
+
+    const activateWaitingServiceWorker = () => {
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: "SKIP_WAITING" });
+      }
+    };
+
+    registration.addEventListener("updatefound", () => {
+      const newWorker = registration.installing;
+      if (!newWorker) return;
+
+      newWorker.addEventListener("statechange", () => {
+        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+          activateWaitingServiceWorker();
+        }
+      });
+    });
+
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (window.__swReloaded) return;
+      window.__swReloaded = true;
+      window.location.reload();
+    });
+
     registration.update();
+    activateWaitingServiceWorker();
   } catch (error) {
     // Silent fail keeps the page functional even when SW is unavailable.
   }
@@ -233,6 +258,123 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       });
+    });
+  }
+
+  const previewButtons = document.querySelectorAll(".quick-preview-btn");
+  const previewModal = document.getElementById("quickPreviewModal");
+  const previewImage = document.getElementById("quickPreviewImage");
+  const previewStatus = document.getElementById("quickPreviewStatus");
+  const previewTitle = document.getElementById("quickPreviewTitle");
+  const previewOpenLink = document.getElementById("quickPreviewOpenLink");
+  const previewCloseButton = document.getElementById("quickPreviewClose");
+  const previewBackdrop = previewModal
+    ? previewModal.querySelector("[data-close-preview]")
+    : null;
+
+  if (
+    previewButtons.length &&
+    previewModal &&
+    previewImage &&
+    previewStatus &&
+    previewTitle &&
+    previewOpenLink &&
+    previewCloseButton &&
+    previewBackdrop
+  ) {
+    let previousFocusElement = null;
+    let statusClearTimeoutId = null;
+
+    const setPreviewStatus = (message, state) => {
+      if (statusClearTimeoutId) {
+        window.clearTimeout(statusClearTimeoutId);
+        statusClearTimeoutId = null;
+      }
+
+      previewStatus.textContent = message;
+      previewStatus.hidden = false;
+      previewStatus.dataset.state = state;
+    };
+
+    const clearPreviewStatus = () => {
+      if (statusClearTimeoutId) {
+        window.clearTimeout(statusClearTimeoutId);
+        statusClearTimeoutId = null;
+      }
+
+      previewStatus.hidden = true;
+      previewStatus.textContent = "";
+      delete previewStatus.dataset.state;
+    };
+
+    const closePreviewModal = () => {
+      previewModal.classList.remove("open");
+      previewModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      previewImage.onload = null;
+      previewImage.onerror = null;
+      previewImage.classList.remove("is-loading");
+      previewImage.src = "";
+      clearPreviewStatus();
+
+      if (previousFocusElement && typeof previousFocusElement.focus === "function") {
+        previousFocusElement.focus();
+      }
+    };
+
+    const openPreviewModal = (previewUrl, projectTitle, fallbackImageUrl) => {
+      previousFocusElement = document.activeElement;
+      previewTitle.textContent = `${projectTitle} - Quick Demo Preview`;
+      previewOpenLink.href = previewUrl;
+
+      const resolvedPreviewUrl = new URL(previewUrl, window.location.href).href;
+      const quickShotUrl = `https://image.thum.io/get/width/1600/${resolvedPreviewUrl}`;
+
+      previewImage.classList.add("is-loading");
+      setPreviewStatus("Loading preview...", "loading");
+
+      previewImage.onload = () => {
+        previewImage.classList.remove("is-loading");
+        setPreviewStatus("Preview ready.", "ready");
+        statusClearTimeoutId = window.setTimeout(() => {
+          clearPreviewStatus();
+        }, 900);
+      };
+
+      previewImage.onerror = () => {
+        if (fallbackImageUrl && previewImage.src !== fallbackImageUrl) {
+          setPreviewStatus("Live preview blocked. Loading fallback image...", "loading");
+          previewImage.src = fallbackImageUrl;
+          return;
+        }
+        previewImage.classList.remove("is-loading");
+        setPreviewStatus('Preview unavailable. Use "Open in New Tab".', "error");
+      };
+      previewImage.src = quickShotUrl;
+
+      previewModal.classList.add("open");
+      previewModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      previewCloseButton.focus();
+    };
+
+    previewButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const previewUrl = button.dataset.previewUrl;
+        const projectTitle = button.dataset.projectTitle || "Project";
+        const fallbackImage = button.closest(".project-card")?.querySelector("img")?.src || "";
+        if (!previewUrl) return;
+        openPreviewModal(previewUrl, projectTitle, fallbackImage);
+      });
+    });
+
+    previewCloseButton.addEventListener("click", closePreviewModal);
+    previewBackdrop.addEventListener("click", closePreviewModal);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && previewModal.classList.contains("open")) {
+        closePreviewModal();
+      }
     });
   }
 

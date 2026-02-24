@@ -1,4 +1,4 @@
-const VERSION = "v3";
+const VERSION = "v4";
 const STATIC_CACHE = `portfolio-static-${VERSION}`;
 const DYNAMIC_CACHE = `portfolio-dynamic-${VERSION}`;
 const OFFLINE_PAGE = "/offline.html";
@@ -25,8 +25,11 @@ const isSameOriginRequest = (request) => {
   return requestUrl.origin === self.location.origin;
 };
 
-const isStaticAssetRequest = (request) =>
-  ["style", "script", "image", "font"].includes(request.destination);
+const isCodeAssetRequest = (request) =>
+  ["style", "script"].includes(request.destination);
+
+const isMediaAssetRequest = (request) =>
+  ["image", "font"].includes(request.destination);
 
 const putInCache = async (cacheName, request, response) => {
   if (!canCacheResponse(response)) return;
@@ -111,7 +114,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (isSameOriginRequest(request) && isStaticAssetRequest(request)) {
+  if (isSameOriginRequest(request) && isCodeAssetRequest(request)) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (isSameOriginRequest(request) && isMediaAssetRequest(request)) {
     event.respondWith(staleWhileRevalidate(request));
     return;
   }

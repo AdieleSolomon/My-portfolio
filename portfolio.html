@@ -123,6 +123,7 @@
               <p>End-to-end website with content structure, events, and engagement pages.</p>
               <div class="tags"><span>Frontend</span><span>Responsive</span><span>UX</span></div>
               <div class="project-actions">
+                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://throne-of-grace.vercel.app/" data-project-title="Throne of Grace Church Website">Quick Preview</button>
                 <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="inline-link" href="https://github.com/AdieleSolomon/Throne-Of-Grace/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
@@ -136,6 +137,7 @@
               <p>Utility-focused interface for streamlined interactions and operational flow.</p>
               <div class="tags"><span>JavaScript</span><span>UI States</span><span>Architecture</span></div>
               <div class="project-actions">
+                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="/system-tools-demo.html" data-project-title="System Tools Demo">Quick Preview</button>
                 <a class="inline-link" href="system-tools-demo.html">Live Demo</a>
                 <a class="inline-link" href="https://github.com/AdieleSolomon/My-portfolio/blob/main/system-tools-demo.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
@@ -149,6 +151,7 @@
               <p>Modern personal website and portfolio system with motion and conversion-first CTA strategy.</p>
               <div class="tags"><span>Design System</span><span>Performance</span><span>SEO</span></div>
               <div class="project-actions">
+                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://adiele-solomon-github-io.vercel.app/" data-project-title="Responsive Portfolio Website">Quick Preview</button>
                 <a class="inline-link" href="https://adiele-solomon-github-io.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="inline-link" href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
@@ -162,6 +165,7 @@
               <p>Comprehensive interior design website built remotely with polished galleries and lead generation flow.</p>
               <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
               <div class="project-actions">
+                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://interio-design-static.vercel.app/" data-project-title="Pure Pleasure Interior Design Website">Quick Preview</button>
                 <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="inline-link" href="https://github.com/AdieleSolomon/Interio-design-static/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
@@ -175,6 +179,7 @@
               <p>Publishing-focused web platform with modern layout and production-ready deployment.</p>
               <div class="tags"><span>Web Platform</span><span>Frontend</span><span>Deployment</span></div>
               <div class="project-actions">
+                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://babcock-publishing.vercel.app" data-project-title="Babcock Publishing Website">Quick Preview</button>
                 <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="inline-link" href="https://github.com/AdieleSolomon/babcock-publishing" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
@@ -188,7 +193,7 @@
         <div class="container reveal">
           <p class="eyebrow">Stack</p>
           <div class="skills">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span><span>Deployment</span><span>Video Editing</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span><span>Deployment</span><span>Video Editing</span><span>Vibe Coding</span>
           </div>
         </div>
       </section>
@@ -253,6 +258,29 @@
       </section>
     </main>
 
+    <div class="preview-modal" id="quickPreviewModal" aria-hidden="true">
+      <button class="preview-modal-backdrop" type="button" data-close-preview aria-label="Close preview"></button>
+      <section class="preview-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quickPreviewTitle">
+        <div class="preview-modal-head">
+          <h3 id="quickPreviewTitle">Quick Demo Preview</h3>
+          <button class="preview-close-btn" id="quickPreviewClose" type="button" aria-label="Close preview">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <p class="preview-modal-note">Quick visual preview. Use "Open in New Tab" for full interaction.</p>
+        <p class="preview-modal-status" id="quickPreviewStatus" aria-live="polite" hidden></p>
+        <img
+          id="quickPreviewImage"
+          class="preview-modal-image"
+          alt="Project visual preview"
+          loading="lazy"
+          decoding="async" />
+        <div class="preview-modal-actions">
+          <a class="btn btn-small" id="quickPreviewOpenLink" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
+        </div>
+      </section>
+    </div>
+
     <footer class="site-footer" id="contact">
       <div class="container footer-wrap reveal">
         <div>
@@ -280,7 +308,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=20260224"></script>
   </body>
 </html>
 
