@@ -414,4 +414,68 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     });
   });
+
+  const projectBriefForms = document.querySelectorAll(".project-brief-form");
+  projectBriefForms.forEach((form) => {
+    const feedback = form.querySelector(".project-brief-feedback");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!feedback) return;
+      if (!form.checkValidity()) {
+        feedback.textContent = "Please complete all required project details first.";
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const readValue = (key) => String(formData.get(key) || "").trim();
+
+      const trapField = readValue("website");
+      if (trapField) {
+        feedback.textContent = "Unable to submit request. Please try again.";
+        return;
+      }
+
+      const fullName = readValue("full_name");
+      const email = readValue("email");
+      const company = readValue("company");
+      const projectType = readValue("project_type");
+      const budgetRange = readValue("budget_range");
+      const timeline = readValue("timeline");
+      const goals = readValue("goals");
+      const mustHaveFeatures = readValue("must_have_features");
+      const referenceUrl = readValue("reference_url");
+      const preferredContact = readValue("preferred_contact");
+
+      const subject = encodeURIComponent(`New project brief from ${fullName}`);
+      const bodyLines = [
+        "Hello Solomon,",
+        "",
+        "I am interested in working with you. Here is my project brief:",
+        "",
+        `Name: ${fullName}`,
+        `Email: ${email}`,
+        `Company: ${company || "Not provided"}`,
+        `Project Type: ${projectType}`,
+        `Budget Range: ${budgetRange}`,
+        `Timeline: ${timeline}`,
+        `Preferred Contact: ${preferredContact}`,
+        "",
+        "Project Goals:",
+        goals,
+        "",
+        "Must-Have Features:",
+        mustHaveFeatures || "Not provided",
+        "",
+        `Reference Website: ${referenceUrl || "Not provided"}`,
+      ];
+      const body = encodeURIComponent(bodyLines.join("\n"));
+
+      feedback.textContent = "Opening your email app with the project brief...";
+      window.location.href = `mailto:solomonadiele1@gmail.com?subject=${subject}&body=${body}`;
+      form.reset();
+    });
+  });
 });
