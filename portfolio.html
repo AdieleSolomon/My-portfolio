@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,13 +11,17 @@
     <meta name="theme-color" content="#f5efe2" />
     <meta name="color-scheme" content="light" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="canonical" href="https://adiele-solomon-github-io.vercel.app/portfolio.html" />
+    <link
+      rel="canonical"
+      href="https://adiele-solomon-github-io.vercel.app/portfolio.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Solomon Adiele | Portfolio" />
     <meta
       property="og:description"
       content="Selected software projects and engineering outcomes by Solomon Adiele." />
-    <meta property="og:url" content="https://adiele-solomon-github-io.vercel.app/portfolio.html" />
+    <meta
+      property="og:url"
+      content="https://adiele-solomon-github-io.vercel.app/portfolio.html" />
     <meta
       property="og:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
@@ -32,19 +36,20 @@
     <meta
       name="twitter:image"
       content="https://adiele-solomon-github-io.vercel.app/assets/images/profile1.jpg" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/images/icons/logo-48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/logo-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>Solomon Adiele | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="preload" href="assets/css/style.css?v=20260304h8" as="style" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@600;700&display=swap"
       rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260304h8" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -53,7 +58,18 @@
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">SOL<span>OMON</span></a>
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="In Torch With Solobest Design home">
+          <img
+            class="brand-logo"
+            src="assets/images/solobext-logo-transparent.png"
+            alt="In Torch With Solobest Design logo"
+            width="876"
+            height="1115"
+            decoding="async" />
+        </a>
         <nav class="main-nav">
           <a href="index.html">Home</a>
           <a href="#projects">Projects</a>
@@ -61,7 +77,12 @@
           <a href="#standards">Standards</a>
           <a href="#process">Process</a>
           <a href="#timeline">Experience</a>
-          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer">CV</a>
+          <a
+            href="Solomon-Adiele-CV.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CV</a
+          >
         </nav>
         <button
           class="menu-toggle"
@@ -79,32 +100,83 @@
         <a href="#standards">Standards</a>
         <a href="#process">Process</a>
         <a href="#timeline">Experience</a>
-        <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer">CV</a>
+        <a
+          href="Solomon-Adiele-CV.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >CV</a
+        >
       </nav>
     </header>
 
     <main id="main-content">
-      <section class="section page-head">
-        <div class="container hero-grid">
-          <div class="reveal">
-            <p class="eyebrow">Portfolio</p>
-            <h1 class="page-title">Selected Work & Engineering Impact</h1>
-            <p class="lead">
-              Real projects focused on reliability, usability, and measurable
-              outcomes.
+      <section class="section page-head portfolio-hero">
+        <div class="portfolio-hero-decor portfolio-hero-decor-1"></div>
+        <div class="portfolio-hero-decor portfolio-hero-decor-2"></div>
+
+        <div class="container portfolio-hero-grid">
+          <div class="portfolio-hero-copy reveal">
+            <p class="eyebrow" style="font-size: 2.5; color: #72cde9">
+              Portfolio
             </p>
+            <h1 class="page-title">
+              Engineering Work With Clarity, Structure, and Impact
+            </h1>
           </div>
-          <aside class="hero-panel reveal-delay">
+
+          <article class="portfolio-hero-profile reveal-delay">
             <img
-              id="heroProfileImage"
-              src="assets/images/profile1.jpg"
+              src="assets/images/optimized/profile1-760.jpg"
+              srcset="
+                assets/images/optimized/profile1-420.jpg 420w,
+                assets/images/optimized/profile1-760.jpg 760w
+              "
+              sizes="(max-width: 620px) 78vw, (max-width: 940px) 56vw, 420px"
               alt="Solomon Adiele portfolio hero"
               width="760"
-              height="1013"
+              height="308"
               loading="eager"
               fetchpriority="high"
               decoding="async" />
-          </aside>
+            <div class="portfolio-profile-meta">
+              <h2>Eng. Solomon C. Adiele</h2>
+              <p>Full-Stack Web Developer</p>
+            </div>
+          </article>
+
+          <div class="portfolio-hero-support reveal">
+            <p>
+              I build and ship production-ready web products with clean frontend
+              systems, practical backend structure, and measurable user-focused
+              outcomes.
+            </p>
+            <div class="portfolio-hero-actions">
+              <a href="#projects" class="btn">Explore Projects</a>
+              <a href="#process" class="btn btn-ghost">How I Work</a>
+              <a href="#standards" class="btn btn-ghost">Delivery Standards</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container portfolio-stat-grid reveal">
+          <div class="portfolio-stat-card">
+            <strong>Frontend Architecture</strong>
+            <span>Accessible interfaces built for speed and scale.</span>
+          </div>
+          <div class="portfolio-stat-card">
+            <strong>Backend Integration</strong>
+            <span>Reliable APIs, data handling, and clean workflows.</span>
+          </div>
+          <div class="portfolio-stat-card">
+            <strong>Performance Focus</strong>
+            <span>Lighthouse-minded optimization and mobile readiness.</span>
+          </div>
+          <div class="portfolio-stat-card">
+            <strong>Delivery Discipline</strong>
+            <span
+              >Clear milestones, reviews, and production quality output.</span
+            >
+          </div>
         </div>
       </section>
 
@@ -113,102 +185,170 @@
           <div class="filter-bar">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="frontend">Frontend</button>
-            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="fullstack">
+              Full Stack
+            </button>
             <button class="filter-btn" data-filter="tools">Tools</button>
           </div>
 
           <div class="project-grid">
-          <article class="project-card" data-category="fullstack">
-            <img src="assets/images/portfolio/1u4a1769-thumb.jpg" alt="Church project" loading="lazy" decoding="async" />
-            <div>
-              <h3>Throne of Grace Church Website</h3>
-              <p>End-to-end website with content structure, events, and engagement pages.</p>
-              <div class="tags"><span>Frontend</span><span>Responsive</span><span>UX</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://throne-of-grace.vercel.app/" data-project-title="Throne of Grace Church Website">Quick Preview</button>
-                <a class="inline-link" href="https://throne-of-grace.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/Throne-Of-Grace/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <article class="project-card" data-category="fullstack">
+              <a
+                class="project-thumb-link"
+                href="https://throne-of-grace.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://throne-of-grace.vercel.app/"
+                  alt="Throne of Grace Church Website preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>Throne of Grace Church Website</h3>
+                <p>
+                  End-to-end website with content structure, events, and
+                  engagement pages.
+                </p>
+                <div class="tags">
+                  <span>Frontend</span><span>Responsive</span><span>UX</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="project-card" data-category="tools">
-            <img src="assets/images/portfolio/1u4a1781-thumb.jpg" alt="System tools" loading="lazy" decoding="async" />
-            <div>
-              <h3>System Tools Demo</h3>
-              <p>Utility-focused interface for streamlined interactions and operational flow.</p>
-              <div class="tags"><span>JavaScript</span><span>UI States</span><span>Architecture</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="/system-tools-demo.html" data-project-title="System Tools Demo">Quick Preview</button>
-                <a class="inline-link" href="system-tools-demo.html">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/My-portfolio/blob/main/system-tools-demo.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <article class="project-card" data-category="tools">
+              <a
+                class="project-thumb-link"
+                href="system-tools-demo.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://adiele-solomon-github-io.vercel.app/system-tools-demo.html"
+                  alt="System Tools Demo preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>System Tools Demo</h3>
+                <p>
+                  Utility-focused interface for streamlined interactions and
+                  operational flow.
+                </p>
+                <div class="tags">
+                  <span>JavaScript</span><span>UI States</span
+                  ><span>Architecture</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="project-card" data-category="frontend">
-            <img src="https://image.thum.io/get/width/1200/https://spiritualcenter.vercel.app/" alt="Spiritual Center website" loading="lazy" decoding="async" />
-            <div>
-              <h3>Spiritual Center Website</h3>
-              <p>Content-rich website experience built for clarity, accessibility, and mobile-first usage.</p>
-              <div class="tags"><span>Frontend</span><span>Responsive</span><span>UX</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://spiritualcenter.vercel.app/" data-project-title="Spiritual Center Website">Quick Preview</button>
-                <a class="inline-link" href="https://spiritualcenter.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <article class="project-card" data-category="frontend">
+              <a
+                class="project-thumb-link"
+                href="https://spiritualcenter.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://spiritualcenter.vercel.app/"
+                  alt="Spiritual Center website preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>Spiritual Center Website</h3>
+                <p>
+                  Content-rich website experience built for clarity,
+                  accessibility, and mobile-first usage.
+                </p>
+                <div class="tags">
+                  <span>Frontend</span><span>Responsive</span><span>UX</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="project-card" data-category="frontend">
-            <img src="assets/images/portfolio/1u4a1875-thumb.jpg" alt="Portfolio engineering" loading="lazy" decoding="async" />
-            <div>
-              <h3>Responsive Portfolio Website</h3>
-              <p>Modern personal website and portfolio system with motion and conversion-first CTA strategy.</p>
-              <div class="tags"><span>Design System</span><span>Performance</span><span>SEO</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://adiele-solomon-github-io.vercel.app/" data-project-title="Responsive Portfolio Website">Quick Preview</button>
-                <a class="inline-link" href="https://adiele-solomon-github-io.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/AdieleSolomon.github.io/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <article class="project-card" data-category="frontend">
+              <a
+                class="project-thumb-link"
+                href="https://adiele-solomon-github-io.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://adiele-solomon-github-io.vercel.app/"
+                  alt="Responsive Portfolio Website preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>Responsive Portfolio Website</h3>
+                <p>
+                  Modern personal website and portfolio system with motion and
+                  conversion-first CTA strategy.
+                </p>
+                <div class="tags">
+                  <span>Design System</span><span>Performance</span
+                  ><span>SEO</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="project-card" data-category="frontend">
-            <img src="assets/images/portfolio/1u4a1754-thumb.jpg" alt="Interior design website" loading="lazy" decoding="async" />
-            <div>
-              <h3>Pure Pleasure Interior Design Website</h3>
-              <p>Comprehensive interior design website built remotely with polished galleries and lead generation flow.</p>
-              <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://interio-design-static.vercel.app/" data-project-title="Pure Pleasure Interior Design Website">Quick Preview</button>
-                <a class="inline-link" href="https://interio-design-static.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/Interio-design-static/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <article class="project-card" data-category="frontend">
+              <a
+                class="project-thumb-link"
+                href="https://interio-design-static.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://interio-design-static.vercel.app/"
+                  alt="Pure Pleasure Interior Design Website preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>Pure Pleasure Interior Design Website</h3>
+                <p>
+                  Comprehensive interior design website built remotely with
+                  polished galleries and lead generation flow.
+                </p>
+                <div class="tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="project-card" data-category="fullstack">
-            <img src="assets/images/portfolio/1u4a1885-thumb.jpg" alt="Babcock Publishing website" loading="lazy" decoding="async" />
-            <div>
-              <h3>Babcock Publishing Website</h3>
-              <p>Publishing-focused web platform with modern layout and production-ready deployment.</p>
-              <div class="tags"><span>Web Platform</span><span>Frontend</span><span>Deployment</span></div>
-              <div class="project-actions">
-                <button class="inline-link inline-link-btn quick-preview-btn" type="button" data-preview-url="https://babcock-publishing.vercel.app" data-project-title="Babcock Publishing Website">Quick Preview</button>
-                <a class="inline-link" href="https://babcock-publishing.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                <a class="inline-link" href="https://github.com/AdieleSolomon/babcock-publishing" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <article class="project-card" data-category="fullstack">
+              <a
+                class="project-thumb-link"
+                href="https://babcock-publishing.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  src="https://image.thum.io/get/width/1200/https://babcock-publishing.vercel.app/"
+                  alt="Babcock Publishing Website preview"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+              <div>
+                <h3>Babcock Publishing Website</h3>
+                <p>
+                  Publishing-focused web platform with modern layout and
+                  production-ready deployment.
+                </p>
+                <div class="tags">
+                  <span>Web Platform</span><span>Frontend</span
+                  ><span>Deployment</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
           </div>
         </div>
       </section>
-
       <section class="section" id="stack">
         <div class="container reveal">
           <p class="eyebrow">Stack</p>
           <div class="skills">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span><span>Deployment</span><span>Video Editing</span><span>Vibe Coding</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span
+            ><span>Node.js</span><span>Express</span><span>MySQL</span
+            ><span>Git</span><span>REST APIs</span><span>Deployment</span
+            ><span>Video Editing</span><span>Vibe Coding</span>
           </div>
         </div>
       </section>
@@ -249,15 +389,24 @@
           <div class="cards">
             <article class="card">
               <h3>Clear Scope Control</h3>
-              <p>Each project runs with defined objectives, milestones, and delivery checkpoints.</p>
+              <p>
+                Each project runs with defined objectives, milestones, and
+                delivery checkpoints.
+              </p>
             </article>
             <article class="card">
               <h3>Engineering Quality</h3>
-              <p>Code is structured for maintainability, performance, and easier iteration after launch.</p>
+              <p>
+                Code is structured for maintainability, performance, and easier
+                iteration after launch.
+              </p>
             </article>
             <article class="card">
               <h3>Communication Reliability</h3>
-              <p>Consistent updates, faster decisions, and transparent progress from kickoff to release.</p>
+              <p>
+                Consistent updates, faster decisions, and transparent progress
+                from kickoff to release.
+              </p>
             </article>
           </div>
         </div>
@@ -268,12 +417,21 @@
           <p class="eyebrow">Experience</p>
           <div class="timeline">
             <article>
-              <h3>Full-Stack Developer - Pure Pleasure Building and Interior Concept LTD</h3>
-              <p>June 2025 - Present. Remote development, performance optimization, responsive architecture, and deployment delivery.</p>
+              <h3>
+                Full-Stack Developer - Pure Pleasure Building and Interior
+                Concept LTD
+              </h3>
+              <p>
+                June 2025 - Present. Remote development, performance
+                optimization, responsive architecture, and deployment delivery.
+              </p>
             </article>
             <article>
               <h3>ICT Department - Rivers State Television (RSTV)</h3>
-              <p>July 2019 - January 2020. Technical operations support and practical systems troubleshooting.</p>
+              <p>
+                July 2019 - January 2020. Technical operations support and
+                practical systems troubleshooting.
+              </p>
             </article>
           </div>
         </div>
@@ -282,7 +440,9 @@
       <section class="section cta-section">
         <div class="container reveal text-center">
           <h2>Ready to build something great?</h2>
-          <p class="lead">Let's discuss your project and create something amazing together.</p>
+          <p class="lead">
+            Let's discuss your project and create something amazing together.
+          </p>
           <a
             href="https://wa.me/2348069383370?text=Hello%20Solomon%2C%20I%27m%20interested%20in%20working%20with%20you%20on%20a%20project."
             class="btn btn-large"
@@ -295,16 +455,34 @@
     </main>
 
     <div class="preview-modal" id="quickPreviewModal" aria-hidden="true">
-      <button class="preview-modal-backdrop" type="button" data-close-preview aria-label="Close preview"></button>
-      <section class="preview-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quickPreviewTitle">
+      <button
+        class="preview-modal-backdrop"
+        type="button"
+        data-close-preview
+        aria-label="Close preview"></button>
+      <section
+        class="preview-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quickPreviewTitle">
         <div class="preview-modal-head">
           <h3 id="quickPreviewTitle">Quick Demo Preview</h3>
-          <button class="preview-close-btn" id="quickPreviewClose" type="button" aria-label="Close preview">
+          <button
+            class="preview-close-btn"
+            id="quickPreviewClose"
+            type="button"
+            aria-label="Close preview">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <p class="preview-modal-note">Quick visual preview. Use "Open in New Tab" for full interaction.</p>
-        <p class="preview-modal-status" id="quickPreviewStatus" aria-live="polite" hidden></p>
+        <p class="preview-modal-note">
+          Quick visual preview. Use "Open in New Tab" for full interaction.
+        </p>
+        <p
+          class="preview-modal-status"
+          id="quickPreviewStatus"
+          aria-live="polite"
+          hidden></p>
         <img
           id="quickPreviewImage"
           class="preview-modal-image"
@@ -312,16 +490,35 @@
           loading="lazy"
           decoding="async" />
         <div class="preview-modal-actions">
-          <a class="btn btn-small" id="quickPreviewOpenLink" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
+          <a
+            class="btn btn-small"
+            id="quickPreviewOpenLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open in New Tab</a
+          >
         </div>
       </section>
     </div>
 
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer" id="contact" style="background-color: rgb(169, 190, 233);">
       <div class="container footer-wrap reveal">
         <div>
-          <h3>Back to Personal Website</h3>
-          <p>Use the home page as your brand-first entry point.</p>
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="In Torch With Solobest Design home">
+            <img
+              class="brand-logo"
+              src="assets/images/solobext-logo-transparent.png"
+              alt="In Torch With Solobest Design logo"
+              width="876"
+              height="1115"
+              decoding="async" />
+          </a>
+          <a href="index.html">
+            <h3>Back to Personal Website</h3>
         </div>
         <div class="newsletter">
           <h3>Stay updated</h3>
@@ -332,10 +529,30 @@
           </form>
         </div>
         <div class="socials">
-          <a href="Solomon-Adiele-CV.html" target="_blank" rel="noopener noreferrer" aria-label="CV"><i class="fas fa-file-alt"></i></a>
-          <a href="cv-download.html" target="_blank" rel="noopener noreferrer" aria-label="Download CV"><i class="fas fa-file-download"></i></a>
-          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://wa.me/2348069383370" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a
+            href="Solomon-Adiele-CV.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CV"
+            ><i class="fas fa-file-alt"></i
+          ></a>
+          <a
+            href="cv-download.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download CV"
+            ><i class="fas fa-file-download"></i
+          ></a>
+          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://wa.me/2348069383370"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
         </div>
       </div>
     </footer>
@@ -344,8 +561,6 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/script.js?v=20260224"></script>
+    <script src="js/script.js?v=20260304h2"></script>
   </body>
 </html>
-
-

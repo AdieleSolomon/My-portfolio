@@ -122,68 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => item.classList.add("in"));
   }
 
-  const heroProfileImage = document.getElementById("heroProfileImage");
-  if (heroProfileImage) {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const prefersReducedData = Boolean(navigator.connection && navigator.connection.saveData);
-
-    if (!prefersReducedMotion && !prefersReducedData) {
-      const heroImages = [
-        "assets/images/profile1.jpg",
-        "assets/images/profile.jpg",
-        "assets/images/1U4A1754.JPG",
-        "assets/images/1U4A1769.JPG",
-        "assets/images/1U4A1781.JPG",
-        "assets/images/1U4A1875.JPG",
-        "assets/images/1U4A1885.JPG",
-      ];
-
-      let currentImageIndex = 0;
-      let rotationTimerId = null;
-
-      const switchHeroImage = () => {
-        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-        const nextImage = heroImages[currentImageIndex];
-        const imageLoader = new Image();
-
-        imageLoader.onload = () => {
-          heroProfileImage.style.opacity = "0";
-          window.setTimeout(() => {
-            heroProfileImage.src = nextImage;
-            heroProfileImage.style.opacity = "1";
-          }, 220);
-        };
-
-        imageLoader.onerror = () => {
-          heroProfileImage.style.opacity = "1";
-        };
-
-        imageLoader.src = nextImage;
-      };
-
-      const startRotation = () => {
-        if (rotationTimerId !== null) return;
-        rotationTimerId = window.setInterval(switchHeroImage, 4500);
-      };
-
-      const stopRotation = () => {
-        if (rotationTimerId === null) return;
-        window.clearInterval(rotationTimerId);
-        rotationTimerId = null;
-      };
-
-      startRotation();
-
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-          stopRotation();
-          return;
-        }
-        startRotation();
-      });
-    }
-  }
-
   const backToTopButton = document.getElementById("backToTop");
   if (backToTopButton) {
     const toggleBackToTop = () => {

@@ -1,4 +1,4 @@
-const VERSION = "v4";
+const VERSION = "v7";
 const STATIC_CACHE = `portfolio-static-${VERSION}`;
 const DYNAMIC_CACHE = `portfolio-dynamic-${VERSION}`;
 const OFFLINE_PAGE = "/offline.html";
@@ -11,7 +11,9 @@ const APP_SHELL = [
   OFFLINE_PAGE,
   "/assets/css/style.css",
   "/js/script.js",
-  "/favicon.svg",
+  "/assets/images/icons/logo-48.png",
+  "/assets/images/icons/logo-192.png",
+  "/assets/images/icons/logo-512.png",
   "/site.webmanifest",
 ];
 
@@ -115,7 +117,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (isSameOriginRequest(request) && isCodeAssetRequest(request)) {
-    event.respondWith(networkFirst(request));
+    event.respondWith(staleWhileRevalidate(request));
     return;
   }
 

@@ -44,24 +44,29 @@
     <meta
       name="google-site-verification"
       content="cNif3_RpinazDFWrunZlfPVG1DqiIwMQ0AKZOj5D_lE" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/images/icons/logo-48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/logo-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>Solomon Adiele Full-Stack Web Developer | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="preload" href="assets/css/style.css?v=20260304h8" as="style" />
     <link
       rel="preload"
       as="image"
-      href="assets/images/profile1.jpg"
-      imagesrcset="assets/images/profile1.jpg 1x, assets/images/profile.jpg 2x" />
+      href="assets/images/optimized/profile1-760.jpg"
+      imagesrcset="
+        assets/images/optimized/profile1-420.jpg 420w,
+        assets/images/optimized/profile1-760.jpg 760w
+      "
+      imagesizes="(max-width: 620px) 74vw, (max-width: 940px) 42vw, 360px" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@600;700&display=swap"
       rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260304h8" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -127,7 +132,18 @@
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">SOLO<span>MON</span></a>
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="In Torch With Solobest Design home">
+          <img
+            class="brand-logo"
+            src="assets/images/solobext-logo-transparent.png"
+            alt="In Torch With Solobest Design logo"
+            width="876"
+            height="1115"
+            decoding="async" />
+        </a>
         <nav class="main-nav">
           <a href="#about">About</a>
           <a
@@ -194,21 +210,61 @@
 
     <main id="main-content">
       <section class="hero section" id="home">
+        <div class="hero-bg-wrap" aria-hidden="true"></div>
+        <div class="hero-decor hero-decor-1" aria-hidden="true"></div>
+        <div class="hero-decor hero-decor-2" aria-hidden="true"></div>
+
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow" style="font-size: 1.25rem; font-weight: bold">
-              Full-Stack Web Developer
+            <p
+              class="eyebrow"
+              style="
+                font-family:
+                  Cambria, Cochin, Georgia, Times, &quot;Times New Roman&quot;,
+                  serif;
+                color: chartreuse;
+                font-size: 20px;
+              ">
+              Built With Precision and Purpose ---
             </p>
-            <h1>
-              Building sharp digital products with
-              <span>design-grade execution.</span>
+            <h1
+              style="
+                font-family: &quot;Times New Roman&quot;, Times, serif;
+                font-style: italic;
+              ">
+              Engineering fast web platforms for teams that need reliable
+              execution.
             </h1>
-            <p class="lead">
-              I turn ideas into reliable web systems across frontend, backend,
-              infrastructure and growth tooling.
+          </div>
+
+          <article class="hero-profile reveal-delay">
+            <img
+              id="heroProfileImage"
+              src="assets/images/optimized/profile1-760.jpg"
+              srcset="
+                assets/images/optimized/profile1-420.jpg 420w,
+                assets/images/optimized/profile1-760.jpg 760w
+              "
+              sizes="(max-width: 620px) 80vw, (max-width: 940px) 68vw, 420px"
+              alt="Solomon Adiele"
+              width="760"
+              height="308"
+              fetchpriority="high"
+              decoding="async" />
+            <div class="profile-meta">
+              <h2>Eng. Solomon C. Adiele</h2>
+              <p>Full-Stack Web Developer</p>
+            </div>
+          </article>
+
+          <div class="hero-support reveal">
+            <p style="color: chartreuse; font-style: oblique">
+              From discovery to deployment, I build clean and scalable digital
+              products with strong UX, stable backend architecture, and
+              measurable product outcomes.
             </p>
-            <div class="hero-cta">
-              <a class="btn" href="portfolio.html">Enter Portfolio</a>
+            <div class="hero-actions">
+              <a class="btn" href="portfolio.html">Explore Portfolio</a>
               <a
                 class="btn btn-ghost"
                 href="Solomon-Adiele-CV.html"
@@ -216,49 +272,53 @@
                 rel="noopener noreferrer"
                 >View CV</a
               >
-              <a class="btn btn-ghost" href="#contact">Book a Call</a>
+              <a class="btn btn-ghost" href="#project-brief">Start a Project</a>
             </div>
           </div>
+        </div>
 
-          <aside class="hero-panel reveal-delay">
-            <img
-              id="heroProfileImage"
-              src="assets/images/profile1.jpg"
-              alt="Solomon Adiele"
-              width="760"
-              height="1013"
-              fetchpriority="high"
-              decoding="async" />
-            <div class="stat-grid">
-              <article>
-                <h3>4+</h3>
-                <p>Years Building</p>
-              </article>
-              <article>
-                <h3>12+</h3>
-                <p>Projects Delivered</p>
-              </article>
-              <article>
-                <h3>99%</h3>
-                <p>Commitment Rate</p>
-              </article>
-              <article>
-                <h3>24/7</h3>
-                <p>Learning Mode</p>
-              </article>
-            </div>
-          </aside>
+        <div class="container stat-grid reveal">
+          <article class="stat-card">
+            <strong>Product Discovery and Planning</strong>
+            <span>Clear scope, architecture, and delivery roadmaps</span>
+          </article>
+          <article class="stat-card">
+            <strong>Frontend and Backend Execution</strong>
+            <span>Fast interfaces with resilient application logic</span>
+          </article>
+          <article class="stat-card">
+            <strong>Performance and SEO Foundations</strong>
+            <span>Optimized loading, metadata, and crawl readiness</span>
+          </article>
+          <article class="stat-card">
+            <strong>Launch and Iterative Support</strong>
+            <span>Post-launch fixes, enhancements, and growth updates</span>
+          </article>
         </div>
       </section>
 
       <section class="section" id="about">
         <div class="container split reveal">
           <div>
-            <p class="eyebrow">About</p>
+            <p
+              class="eyebrow"
+              style="
+                font-style: italic, bold;
+                font-size: large;
+                color: rgb(87, 53, 240);
+              ">
+              About
+            </p>
             <h2>Engineer mindset, product focus.</h2>
           </div>
           <div>
-            <p>
+            <p
+              style="
+                color: rgb(44, 9, 201);
+                font-family: &quot;Times New Roman&quot;, Times, serif;
+                font-style: italic;
+                font-size: large;
+              ">
               I am Solomon Chimereucheya Adiele, a full-stack web developer who
               builds fast, resilient and human-centered software. I care about
               clean architecture, performance, and practical outcomes that move
@@ -595,7 +655,10 @@
           <div class="offer-grid">
             <article class="offer-card">
               <h3>Launch Build</h3>
-              <p>For businesses that need a polished, production-ready site quickly.</p>
+              <p>
+                For businesses that need a polished, production-ready site
+                quickly.
+              </p>
               <p class="offer-meta">Timeline: 2-6 weeks</p>
               <ul class="offer-list">
                 <li>Scope and architecture planning</li>
@@ -605,7 +668,10 @@
             </article>
             <article class="offer-card">
               <h3>Product Sprint</h3>
-              <p>For active teams shipping features, dashboards, or internal tooling.</p>
+              <p>
+                For active teams shipping features, dashboards, or internal
+                tooling.
+              </p>
               <p class="offer-meta">Timeline: Weekly sprint cycles</p>
               <ul class="offer-list">
                 <li>Milestone-based feature delivery</li>
@@ -615,7 +681,10 @@
             </article>
             <article class="offer-card">
               <h3>Performance Rescue</h3>
-              <p>For websites needing speed, stability, and maintainability improvements.</p>
+              <p>
+                For websites needing speed, stability, and maintainability
+                improvements.
+              </p>
               <p class="offer-meta">Timeline: 1-3 weeks</p>
               <ul class="offer-list">
                 <li>Lighthouse and UX bottleneck audit</li>
@@ -736,29 +805,31 @@
             <details class="faq-item">
               <summary>What project sizes do you take on?</summary>
               <p>
-                I handle both focused landing-page builds and multi-page platforms.
-                The best fit is work that values clear outcomes and practical execution.
+                I handle both focused landing-page builds and multi-page
+                platforms. The best fit is work that values clear outcomes and
+                practical execution.
               </p>
             </details>
             <details class="faq-item">
               <summary>How do communication and updates work?</summary>
               <p>
-                I provide consistent progress updates, milestone reviews, and direct
-                communication through WhatsApp or email so decisions stay fast.
+                I provide consistent progress updates, milestone reviews, and
+                direct communication through WhatsApp or email so decisions stay
+                fast.
               </p>
             </details>
             <details class="faq-item">
               <summary>Do you support projects after launch?</summary>
               <p>
-                Yes. I can continue with optimization, bug fixes, and iterative feature
-                improvements after the initial release.
+                Yes. I can continue with optimization, bug fixes, and iterative
+                feature improvements after the initial release.
               </p>
             </details>
             <details class="faq-item">
               <summary>Can you collaborate with an existing team?</summary>
               <p>
-                Yes. I integrate with existing workflows, repositories, and release
-                processes while keeping delivery standards consistent.
+                Yes. I integrate with existing workflows, repositories, and
+                release processes while keeping delivery standards consistent.
               </p>
             </details>
           </div>
@@ -779,7 +850,9 @@
               <ul>
                 <li>I review your brief and confirm feasibility.</li>
                 <li>I send a clear scope direction and suggested timeline.</li>
-                <li>We align on priorities and start with a focused kickoff.</li>
+                <li>
+                  We align on priorities and start with a focused kickoff.
+                </li>
               </ul>
               <p class="offer-meta">Typical response window: within 24 hours</p>
             </article>
@@ -787,15 +860,26 @@
               <div class="form-grid">
                 <label class="field">
                   <span>Full Name *</span>
-                  <input type="text" name="full_name" autocomplete="name" required />
+                  <input
+                    type="text"
+                    name="full_name"
+                    autocomplete="name"
+                    required />
                 </label>
                 <label class="field">
                   <span>Email *</span>
-                  <input type="email" name="email" autocomplete="email" required />
+                  <input
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    required />
                 </label>
                 <label class="field">
                   <span>Company / Organization</span>
-                  <input type="text" name="company" autocomplete="organization" />
+                  <input
+                    type="text"
+                    name="company"
+                    autocomplete="organization" />
                 </label>
                 <label class="field">
                   <span>Project Type *</span>
@@ -832,15 +916,25 @@
                 </label>
                 <label class="field field-wide">
                   <span>Project Goals *</span>
-                  <textarea name="goals" rows="4" required placeholder="What outcome should this project achieve?"></textarea>
+                  <textarea
+                    name="goals"
+                    rows="4"
+                    required
+                    placeholder="What outcome should this project achieve?"></textarea>
                 </label>
                 <label class="field field-wide">
                   <span>Must-Have Features</span>
-                  <textarea name="must_have_features" rows="3" placeholder="List core features or pages you need."></textarea>
+                  <textarea
+                    name="must_have_features"
+                    rows="3"
+                    placeholder="List core features or pages you need."></textarea>
                 </label>
                 <label class="field">
                   <span>Reference Website</span>
-                  <input type="url" name="reference_url" placeholder="https://example.com" />
+                  <input
+                    type="url"
+                    name="reference_url"
+                    placeholder="https://example.com" />
                 </label>
                 <label class="field">
                   <span>Preferred Contact *</span>
@@ -851,9 +945,15 @@
                     <option>Phone Call</option>
                   </select>
                 </label>
-                <label class="field field-wide project-brief-honeypot" aria-hidden="true">
+                <label
+                  class="field field-wide project-brief-honeypot"
+                  aria-hidden="true">
                   <span>Website</span>
-                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                  <input
+                    type="text"
+                    name="website"
+                    tabindex="-1"
+                    autocomplete="off" />
                 </label>
               </div>
               <div class="project-brief-actions">
@@ -885,6 +985,14 @@
     <footer class="site-footer" id="contact">
       <div class="container footer-wrap reveal">
         <div>
+          <img
+            class="footer-brand-logo"
+            src="assets/images/solobext-logo-transparent.png"
+            alt="In Torch With Solobest Design logo"
+            width="876"
+            height="1115"
+            loading="lazy"
+            decoding="async" />
           <h3>Let's Build Something Valuable</h3>
           <p>solomonadiele1@gmail.com | +234 806 938 3370</p>
         </div>
@@ -946,7 +1054,6 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=20260304h2"></script>
   </body>
 </html>
-
