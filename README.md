@@ -33,3 +33,27 @@ Accessibility: The links maintain good accessibility with proper title attribute
 
 ## 🌐 Live Demo
 Visit: https://adielesolomon.github.io
+
+## Project Brief Backend Setup (Global Dashboard + Auto Alerts)
+- API route: `/api/project-briefs` (GET for dashboard, POST for form submissions)
+- Storage: Google Sheets (shared across all users/devices)
+- Alerts: Twilio (automatic SMS/WhatsApp, no user tap required)
+
+### Environment Variables
+Set these in Vercel Project Settings -> Environment Variables:
+
+- `GOOGLE_SHEETS_BRIEFS_SPREADSHEET_ID`
+- `GOOGLE_SHEETS_BRIEFS_SHEET_NAME` (optional, defaults to `Briefs`)
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL`
+- `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`
+- `TWILIO_ACCOUNT_SID`
+- `TWILIO_AUTH_TOKEN`
+- `TWILIO_MESSAGE_FROM` (example: `whatsapp:+14155238886` or an SMS-enabled Twilio number)
+- `BRIEF_ALERT_TO` (example: `+2348069383370`)
+- `BRIEF_ALERT_CHANNEL` (`whatsapp` or `sms`)
+
+### Required Google Sheets Permission
+- Share your target Google Sheet with the service account email in `GOOGLE_SERVICE_ACCOUNT_EMAIL` and grant Editor access.
+
+Use `.env.example` as the local template.
+

@@ -36,6 +36,102 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", registerServiceWorker);
 }
 
+const PROJECT_BRIEF_STORAGE_KEY = "solobest_project_briefs";
+const PROJECT_BRIEF_STORAGE_LIMIT = 300;
+const PROJECT_BRIEF_API_ENDPOINT = "/api/project-briefs";
+const PROJECT_BRIEF_REQUEST_TIMEOUT_MS = 14000;
+
+const getStoredProjectBriefs = () => {
+  try {
+    const rawValue = localStorage.getItem(PROJECT_BRIEF_STORAGE_KEY);
+    if (!rawValue) return [];
+    const parsedValue = JSON.parse(rawValue);
+    return Array.isArray(parsedValue) ? parsedValue : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+const setStoredProjectBriefs = (briefs) => {
+  try {
+    localStorage.setItem(PROJECT_BRIEF_STORAGE_KEY, JSON.stringify(briefs));
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+const saveProjectBrief = (brief) => {
+  const currentBriefs = getStoredProjectBriefs();
+  currentBriefs.unshift(brief);
+
+  if (currentBriefs.length > PROJECT_BRIEF_STORAGE_LIMIT) {
+    currentBriefs.length = PROJECT_BRIEF_STORAGE_LIMIT;
+  }
+
+  const didSave = setStoredProjectBriefs(currentBriefs);
+  return { didSave, total: currentBriefs.length };
+};
+
+const formatBriefDateTime = (isoString) => {
+  try {
+    const dateValue = new Date(isoString);
+    if (Number.isNaN(dateValue.getTime())) return "Unknown date";
+    return new Intl.DateTimeFormat(undefined, {
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(dateValue);
+  } catch (error) {
+    return "Unknown date";
+  }
+};
+
+const fetchJsonWithTimeout = async (url, options = {}) => {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(
+    () => controller.abort(),
+    PROJECT_BRIEF_REQUEST_TIMEOUT_MS
+  );
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        Accept: "application/json",
+        ...(options.headers || {}),
+      },
+      signal: controller.signal,
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const message =
+        typeof payload.message === "string" && payload.message.trim()
+          ? payload.message.trim()
+          : `Request failed with status ${response.status}.`;
+      throw new Error(message);
+    }
+
+    return payload;
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+};
+
+const submitProjectBriefToApi = async (briefPayload) =>
+  fetchJsonWithTimeout(PROJECT_BRIEF_API_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(briefPayload),
+  });
+
+const loadProjectBriefsFromApi = async () => {
+  const payload = await fetchJsonWithTimeout(PROJECT_BRIEF_API_ENDPOINT, {
+    method: "GET",
+  });
+  return Array.isArray(payload.briefs) ? payload.briefs : [];
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle");
   const mobileNav = document.getElementById("mobileNav");
@@ -357,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
   projectBriefForms.forEach((form) => {
     const feedback = form.querySelector(".project-brief-feedback");
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       if (!feedback) return;
@@ -387,33 +483,198 @@ document.addEventListener("DOMContentLoaded", () => {
       const referenceUrl = readValue("reference_url");
       const preferredContact = readValue("preferred_contact");
 
-      const subject = encodeURIComponent(`New project brief from ${fullName}`);
-      const bodyLines = [
-        "Hello Solomon,",
-        "",
-        "I am interested in working with you. Here is my project brief:",
-        "",
-        `Name: ${fullName}`,
-        `Email: ${email}`,
-        `Company: ${company || "Not provided"}`,
-        `Project Type: ${projectType}`,
-        `Budget Range: ${budgetRange}`,
-        `Timeline: ${timeline}`,
-        `Preferred Contact: ${preferredContact}`,
-        "",
-        "Project Goals:",
+      const briefRecord = {
+        id: `brief-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        createdAt: new Date().toISOString(),
+        fullName,
+        email,
+        company: company || "Not provided",
+        projectType,
+        budgetRange,
+        timeline,
         goals,
-        "",
-        "Must-Have Features:",
-        mustHaveFeatures || "Not provided",
-        "",
-        `Reference Website: ${referenceUrl || "Not provided"}`,
-      ];
-      const body = encodeURIComponent(bodyLines.join("\n"));
+        mustHaveFeatures: mustHaveFeatures || "Not provided",
+        referenceUrl: referenceUrl || "Not provided",
+        preferredContact,
+      };
 
-      feedback.textContent = "Opening your email app with the project brief...";
-      window.location.href = `mailto:solomonadiele1@gmail.com?subject=${subject}&body=${body}`;
-      form.reset();
+      feedback.textContent = "Submitting project brief...";
+
+      try {
+        const apiResult = await submitProjectBriefToApi(briefRecord);
+        const storedBrief = apiResult.brief && typeof apiResult.brief === "object"
+          ? apiResult.brief
+          : briefRecord;
+        saveProjectBrief(storedBrief);
+        form.reset();
+
+        const notificationState = apiResult.notification || {};
+        if (notificationState.sent === false) {
+          feedback.textContent =
+            "Project brief submitted successfully. Notification could not be delivered automatically.";
+        } else {
+          feedback.textContent =
+            "Project brief submitted successfully. You will receive an automatic phone alert shortly.";
+        }
+      } catch (error) {
+        const saveResult = saveProjectBrief(briefRecord);
+        if (saveResult.didSave) {
+          feedback.textContent =
+            "Live submission is currently unavailable. Brief saved locally on this device only.";
+        } else {
+          feedback.textContent =
+            "Unable to submit project brief right now. Please try again in a moment.";
+        }
+      }
     });
   });
+
+  const briefBoardList = document.getElementById("briefBoardList");
+  const briefBoardStatus = document.getElementById("briefBoardStatus");
+  const briefRefreshBtn = document.getElementById("briefRefreshBtn");
+  const briefClearBtn = document.getElementById("briefClearBtn");
+
+  if (briefBoardList && briefBoardStatus) {
+    const createBriefField = (label, value, allowLink = false) => {
+      const fieldElement = document.createElement("div");
+      fieldElement.className = "brief-field";
+
+      const labelElement = document.createElement("span");
+      labelElement.className = "label";
+      labelElement.textContent = label;
+
+      const valueElement = document.createElement("span");
+      valueElement.className = "value";
+
+      if (allowLink && /^https?:\/\//i.test(value)) {
+        const anchorElement = document.createElement("a");
+        anchorElement.href = value;
+        anchorElement.textContent = value;
+        anchorElement.target = "_blank";
+        anchorElement.rel = "noopener noreferrer";
+        valueElement.appendChild(anchorElement);
+      } else {
+        valueElement.textContent = value;
+      }
+
+      fieldElement.appendChild(labelElement);
+      fieldElement.appendChild(valueElement);
+      return fieldElement;
+    };
+
+    const renderBriefBoard = async () => {
+      briefBoardStatus.textContent = "Loading submitted project briefs...";
+      briefBoardList.innerHTML = "";
+      let briefs = [];
+      let usingLiveData = false;
+
+      try {
+        briefs = await loadProjectBriefsFromApi();
+        usingLiveData = true;
+        setStoredProjectBriefs(briefs);
+      } catch (error) {
+        briefs = getStoredProjectBriefs();
+      }
+
+      if (!briefs.length) {
+        briefBoardStatus.textContent = usingLiveData
+          ? "No submitted project briefs yet."
+          : "Live dashboard unavailable. No locally cached briefs found.";
+        const emptyStateElement = document.createElement("article");
+        emptyStateElement.className = "brief-item-empty";
+        emptyStateElement.textContent = usingLiveData
+          ? "No briefs found yet. New submissions will appear here automatically."
+          : "Unable to reach live dashboard and no local cache is available yet.";
+        briefBoardList.appendChild(emptyStateElement);
+        return;
+      }
+
+      if (usingLiveData) {
+        briefBoardStatus.textContent = `${briefs.length} submitted brief${
+          briefs.length === 1 ? "" : "s"
+        } from all devices.`;
+      } else {
+        briefBoardStatus.textContent = `Live dashboard unavailable. Showing ${briefs.length} locally cached brief${
+          briefs.length === 1 ? "" : "s"
+        }.`;
+      }
+
+      briefs.forEach((brief) => {
+        const itemElement = document.createElement("article");
+        itemElement.className = "brief-item";
+
+        const headElement = document.createElement("div");
+        headElement.className = "brief-item-head";
+
+        const titleElement = document.createElement("h3");
+        titleElement.textContent = brief.fullName || "Unnamed request";
+
+        const timeElement = document.createElement("time");
+        timeElement.dateTime = brief.createdAt || "";
+        timeElement.textContent = formatBriefDateTime(brief.createdAt);
+
+        headElement.appendChild(titleElement);
+        headElement.appendChild(timeElement);
+
+        const fieldGridElement = document.createElement("div");
+        fieldGridElement.className = "brief-item-grid";
+        fieldGridElement.appendChild(createBriefField("Email", brief.email || "Not provided"));
+        fieldGridElement.appendChild(
+          createBriefField("Company", brief.company || "Not provided")
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Project Type", brief.projectType || "Not provided")
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Budget", brief.budgetRange || "Not provided")
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Timeline", brief.timeline || "Not provided")
+        );
+        fieldGridElement.appendChild(
+          createBriefField(
+            "Preferred Contact",
+            brief.preferredContact || "Not provided"
+          )
+        );
+        fieldGridElement.appendChild(
+          createBriefField(
+            "Must-Have Features",
+            brief.mustHaveFeatures || "Not provided"
+          )
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Reference URL", brief.referenceUrl || "Not provided", true)
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Project Goals", brief.goals || "Not provided")
+        );
+
+        itemElement.appendChild(headElement);
+        itemElement.appendChild(fieldGridElement);
+        briefBoardList.appendChild(itemElement);
+      });
+    };
+
+    if (briefRefreshBtn) {
+      briefRefreshBtn.addEventListener("click", () => {
+        renderBriefBoard();
+      });
+    }
+
+    if (briefClearBtn) {
+      briefClearBtn.textContent = "Clear Local Cache";
+      briefClearBtn.addEventListener("click", () => {
+        const shouldClear = window.confirm(
+          "Clear locally cached briefs from this browser?"
+        );
+        if (!shouldClear) return;
+        setStoredProjectBriefs([]);
+        briefBoardStatus.textContent = "Local cache cleared. Reloading live dashboard...";
+        renderBriefBoard();
+      });
+    }
+
+    renderBriefBoard();
+  }
 });

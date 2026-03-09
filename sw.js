@@ -1,4 +1,4 @@
-const VERSION = "v7";
+const VERSION = "v9";
 const STATIC_CACHE = `portfolio-static-${VERSION}`;
 const DYNAMIC_CACHE = `portfolio-dynamic-${VERSION}`;
 const OFFLINE_PAGE = "/offline.html";
@@ -7,6 +7,7 @@ const APP_SHELL = [
   "/",
   "/index.html",
   "/portfolio.html",
+  "/project-briefs.html",
   "/404.html",
   OFFLINE_PAGE,
   "/assets/css/style.css",
@@ -32,6 +33,11 @@ const isCodeAssetRequest = (request) =>
 
 const isMediaAssetRequest = (request) =>
   ["image", "font"].includes(request.destination);
+
+const isApiRequest = (request) => {
+  const requestUrl = new URL(request.url);
+  return requestUrl.origin === self.location.origin && requestUrl.pathname.startsWith("/api/");
+};
 
 const putInCache = async (cacheName, request, response) => {
   if (!canCacheResponse(response)) return;
@@ -108,6 +114,10 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
 
   if (request.method !== "GET" || !request.url.startsWith("http")) {
+    return;
+  }
+
+  if (isApiRequest(request)) {
     return;
   }
 

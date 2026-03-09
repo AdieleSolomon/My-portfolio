@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project brief dashboard for submitted client requests and follow-up workflow." />
+    <meta name="author" content="Solomon Adiele" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1a0b2e" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="https://adiele-solomon-github-io.vercel.app/project-briefs.html" />
+    <link rel="icon" href="/assets/images/icons/logo-48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/logo-192.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Project Brief Dashboard | Solomon Adiele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260309m1" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="In Torch With Solobest Design home">
+          <img
+            class="brand-logo"
+            src="assets/images/solobext-logo-transparent.png"
+            alt="In Torch With Solobest Design logo"
+            width="876"
+            height="1115"
+            decoding="async" />
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#project-brief">New Brief</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a
+            href="Solomon-Adiele-CV.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CV</a
+          >
+        </nav>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-controls="mobileNav"
+          aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="index.html#project-brief">New Brief</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a
+          href="Solomon-Adiele-CV.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >CV</a
+        >
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section page-head">
+        <div class="container reveal">
+          <p class="eyebrow">Admin Panel</p>
+          <h1 class="page-title">Project Brief Dashboard</h1>
+          <p class="lead">
+            Review all saved client briefs, follow up quickly, and keep project
+            requests organized.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-small" href="index.html#project-brief">Add New Brief</a>
+            <a
+              class="btn btn-small btn-ghost"
+              href="https://wa.me/2348069383370"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reveal">
+          <div class="brief-board">
+            <div class="brief-board-head">
+              <div>
+                <h2>Submitted Briefs</h2>
+                <p class="brief-board-status" id="briefBoardStatus">
+                  Loading project briefs...
+                </p>
+              </div>
+              <div class="brief-board-actions">
+                <button type="button" class="btn btn-small btn-ghost" id="briefRefreshBtn">
+                  Refresh
+                </button>
+                <button type="button" class="btn btn-small btn-ghost" id="briefClearBtn">
+                  Clear Local Cache
+                </button>
+              </div>
+            </div>
+
+            <div class="brief-list" id="briefBoardList" aria-live="polite"></div>
+          </div>
+          <p class="offer-meta" style="margin-top: 0.8rem">
+            This dashboard loads live submissions from your backend across devices.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-wrap reveal">
+        <div class="footer-intro">
+          <div class="footer-brand-line">
+            <img
+              class="footer-brand-logo"
+              src="assets/images/solobext-logo-transparent.png"
+              alt="In Torch With Solobest Design logo"
+              width="876"
+              height="1115"
+              loading="lazy"
+              decoding="async" />
+            <h3>Stay Ready for New Projects</h3>
+          </div>
+          <p>solomonadiele1@gmail.com | +234 806 938 3370</p>
+        </div>
+        <div class="socials">
+          <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://wa.me/2348069383370"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/adiele-solomon"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://github.com/AdieleSolomon"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js?v=20260309m2"></script>
+  </body>
+</html>

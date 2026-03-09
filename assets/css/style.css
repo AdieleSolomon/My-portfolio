@@ -1341,6 +1341,94 @@ h2 {
   min-height: 1.2rem;
 }
 
+.brief-board {
+  background: linear-gradient(160deg, rgba(226, 246, 255, 0.96), rgba(186, 230, 252, 0.92));
+  border: 1px solid rgba(0, 191, 255, 0.28);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.brief-board-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.brief-board-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.brief-board-status {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.brief-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.brief-item {
+  background: rgba(242, 251, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.brief-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 0.8rem;
+  margin-bottom: 0.45rem;
+}
+
+.brief-item h3 {
+  font-size: 1.08rem;
+}
+
+.brief-item time {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.brief-item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+}
+
+.brief-field {
+  min-width: 0;
+}
+
+.brief-field .label {
+  display: block;
+  color: var(--text-light);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.18rem;
+}
+
+.brief-field .value {
+  color: var(--text);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.brief-item-empty {
+  padding: 1.1rem;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  color: var(--text-light);
+}
+
 .step {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1540,15 +1628,36 @@ h2 {
   gap: 1rem;
 }
 
+.footer-intro {
+  min-width: 0;
+}
+
+.footer-brand-line {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.footer-brand-line h3 {
+  margin: 0;
+  min-width: 0;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
 .footer-wrap p {
   color: var(--text-light);
+  overflow-wrap: anywhere;
 }
 
 .footer-brand-logo {
   width: auto;
-  height: clamp(52px, 10vw, 84px);
-  margin-bottom: 0.45rem;
+  height: clamp(42px, 7.2vw, 64px);
+  margin-bottom: 0;
   object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .page-head-logo {
@@ -1730,9 +1839,9 @@ h3 {
 }
 
 .site-header {
-  background: rgba(233, 248, 255, 0.88);
-  border-bottom: 1px solid rgba(0, 191, 255, 0.22);
-  box-shadow: 0 10px 30px rgba(0, 143, 191, 0.14);
+  background: rgba(5, 33, 50, 0.92);
+  border-bottom: 1px solid rgba(77, 189, 245, 0.34);
+  box-shadow: 0 12px 28px rgba(1, 14, 24, 0.42);
 }
 
 .brand {
@@ -1746,7 +1855,7 @@ h3 {
 .main-nav a,
 .mobile-nav a,
 .section-menu-label {
-  color: rgba(8, 49, 79, 0.84);
+  color: rgba(228, 245, 255, 0.9);
 }
 
 .main-nav a:hover,
@@ -1775,23 +1884,23 @@ h3 {
 }
 
 .section-menu-toggle {
-  border-color: var(--line);
-  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(77, 189, 245, 0.38);
+  background: rgba(4, 33, 51, 0.88);
 }
 
 .section-menu {
-  border-color: var(--line);
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(77, 189, 245, 0.34);
+  background: rgba(3, 30, 46, 0.97);
+  box-shadow: 0 12px 24px rgba(1, 14, 24, 0.32);
 }
 
 .section-menu a {
-  color: var(--text);
+  color: rgba(220, 243, 255, 0.9);
 }
 
 .section-menu a:hover {
-  background: rgba(0, 164, 255, 0.12);
-  color: var(--accent);
+  background: rgba(0, 164, 255, 0.24);
+  color: #9be8ff;
 }
 
 .section-menu-toggle .bar,
@@ -1800,9 +1909,9 @@ h3 {
 }
 
 .mobile-nav {
-  border-top: 1px solid var(--line);
-  background: rgba(236, 249, 255, 0.96);
-  box-shadow: var(--shadow-sm);
+  border-top: 1px solid rgba(77, 189, 245, 0.3);
+  background: rgba(4, 33, 51, 0.96);
+  box-shadow: 0 12px 24px rgba(1, 14, 24, 0.35);
 }
 
 .hero h1 {
@@ -2007,8 +2116,26 @@ h1 span {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line);
-  background: rgba(230, 247, 255, 0.9);
+  border-top: 1px solid rgba(77, 189, 245, 0.34);
+  background: rgba(5, 33, 50, 0.94);
+}
+
+.site-footer h3 {
+  color: #e5f6ff;
+}
+
+.site-footer .footer-wrap p,
+.site-footer .newsletter p {
+  color: rgba(191, 223, 241, 0.88);
+}
+
+.site-footer .newsletter {
+  background: linear-gradient(
+    160deg,
+    rgba(3, 30, 46, 0.9),
+    rgba(4, 39, 59, 0.88)
+  );
+  border-color: rgba(77, 189, 245, 0.34);
 }
 
 .socials a {
@@ -2016,12 +2143,32 @@ h1 span {
   transition: var(--transition-smooth);
 }
 
+.site-footer .socials a {
+  background: rgba(2, 27, 42, 0.88);
+  border-color: rgba(77, 189, 245, 0.34);
+  color: #59d2ff;
+}
+
 .socials a:hover {
   border-color: rgba(0, 191, 255, 0.44);
   transform: translateY(-2px);
 }
 
-.newsletter-form input:focus-visible {
+.site-footer .socials a:hover {
+  border-color: rgba(89, 210, 255, 0.68);
+}
+
+.site-footer .newsletter-form input {
+  background: rgba(3, 25, 39, 0.9);
+  border-color: rgba(77, 189, 245, 0.28);
+  color: rgba(235, 248, 255, 0.94);
+}
+
+.site-footer .newsletter-form input::placeholder {
+  color: rgba(171, 208, 229, 0.78);
+}
+
+.site-footer .newsletter-form input:focus-visible {
   outline: 2px solid rgba(0, 191, 255, 0.4);
   outline-offset: 1px;
 }
@@ -2119,6 +2266,10 @@ h1 span {
     align-items: flex-start;
   }
 
+  .back-to-top {
+    bottom: 5.95rem;
+  }
+
   .newsletter {
     width: 100%;
     max-width: none;
@@ -2155,7 +2306,23 @@ h1 span {
   }
 
   .footer-brand-logo {
-    height: 72px;
+    height: 58px;
+  }
+
+  .footer-brand-line {
+    gap: 0.5rem;
+  }
+
+  .hero h1,
+  .page-title,
+  .portfolio-hero-copy .page-title {
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 6.45rem;
   }
 
   .page-head-logo {
@@ -2169,15 +2336,15 @@ h1 span {
 
   .hero-actions {
     margin-top: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
     gap: 0.5rem;
     padding-bottom: 2px;
   }
 
   .hero-actions .btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    flex: 1 1 auto;
+    white-space: normal;
     font-size: 0.82rem;
     min-height: 38px;
     padding: 0.62rem 0.88rem;
@@ -2194,15 +2361,15 @@ h1 span {
 
   .portfolio-hero-actions {
     margin-top: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
     gap: 0.45rem;
     padding-bottom: 2px;
   }
 
   .portfolio-hero-actions .btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    flex: 1 1 auto;
+    white-space: normal;
     font-size: 0.82rem;
     min-height: 38px;
     padding: 0.62rem 0.88rem;
@@ -2210,6 +2377,17 @@ h1 span {
 
   .portfolio-stat-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brief-item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-row strong,
+  .info-row a,
+  .phone-wrap a,
+  .brief-field .value {
+    overflow-wrap: anywhere;
   }
 
   .project-grid {
