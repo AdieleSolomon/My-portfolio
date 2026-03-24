@@ -13,7 +13,10 @@ const registerServiceWorker = async () => {
       if (!newWorker) return;
 
       newWorker.addEventListener("statechange", () => {
-        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+        if (
+          newWorker.state === "installed" &&
+          navigator.serviceWorker.controller
+        ) {
           activateWaitingServiceWorker();
         }
       });
@@ -90,7 +93,7 @@ const fetchJsonWithTimeout = async (url, options = {}) => {
   const controller = new AbortController();
   const timeoutId = window.setTimeout(
     () => controller.abort(),
-    PROJECT_BRIEF_REQUEST_TIMEOUT_MS
+    PROJECT_BRIEF_REQUEST_TIMEOUT_MS,
   );
 
   try {
@@ -157,7 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (event) => {
-      if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      if (
+        !mobileNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
         setMobileMenuState(false);
       }
     });
@@ -190,7 +196,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (event) => {
-      if (!sectionMenu.contains(event.target) && !sectionMenuToggle.contains(event.target)) {
+      if (
+        !sectionMenu.contains(event.target) &&
+        !sectionMenuToggle.contains(event.target)
+      ) {
         closeSectionMenu();
       }
     });
@@ -210,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
           obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" },
     );
 
     revealItems.forEach((item) => observer.observe(item));
@@ -235,7 +244,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card[data-category]");
+  const projectCards = document.querySelectorAll(
+    ".project-card[data-category]",
+  );
   if (filterButtons.length && projectCards.length) {
     const fadeOutCard = (card) => {
       card.getAnimations().forEach((animation) => animation.cancel());
@@ -244,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { opacity: 1, transform: "translateY(0)" },
           { opacity: 0, transform: "translateY(8px)" },
         ],
-        { duration: 180, easing: "ease-out", fill: "forwards" }
+        { duration: 180, easing: "ease-out", fill: "forwards" },
       );
 
       animation.onfinish = () => {
@@ -262,12 +273,15 @@ document.addEventListener("DOMContentLoaded", () => {
           { opacity: 0, transform: "translateY(8px)" },
           { opacity: 1, transform: "translateY(0)" },
         ],
-        { duration: 220, easing: "ease-out", fill: "both" }
+        { duration: 220, easing: "ease-out", fill: "both" },
       );
     };
 
     filterButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.classList.contains("active")));
+      button.setAttribute(
+        "aria-pressed",
+        String(button.classList.contains("active")),
+      );
 
       button.addEventListener("click", () => {
         const selectedFilter = button.dataset.filter;
@@ -282,7 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         projectCards.forEach((card) => {
           const cardCategory = card.dataset.category;
-          const shouldShow = selectedFilter === "all" || cardCategory === selectedFilter;
+          const shouldShow =
+            selectedFilter === "all" || cardCategory === selectedFilter;
           const isVisible = card.style.display !== "none";
 
           if (shouldShow && !isVisible) {
@@ -351,7 +366,10 @@ document.addEventListener("DOMContentLoaded", () => {
       previewImage.src = "";
       clearPreviewStatus();
 
-      if (previousFocusElement && typeof previousFocusElement.focus === "function") {
+      if (
+        previousFocusElement &&
+        typeof previousFocusElement.focus === "function"
+      ) {
         previousFocusElement.focus();
       }
     };
@@ -377,12 +395,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       previewImage.onerror = () => {
         if (fallbackImageUrl && previewImage.src !== fallbackImageUrl) {
-          setPreviewStatus("Live preview blocked. Loading fallback image...", "loading");
+          setPreviewStatus(
+            "Live preview blocked. Loading fallback image...",
+            "loading",
+          );
           previewImage.src = fallbackImageUrl;
           return;
         }
         previewImage.classList.remove("is-loading");
-        setPreviewStatus('Preview unavailable. Use "Open in New Tab".', "error");
+        setPreviewStatus(
+          'Preview unavailable. Use "Open in New Tab".',
+          "error",
+        );
       };
       previewImage.src = quickShotUrl;
 
@@ -396,7 +420,8 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => {
         const previewUrl = button.dataset.previewUrl;
         const projectTitle = button.dataset.projectTitle || "Project";
-        const fallbackImage = button.closest(".project-card")?.querySelector("img")?.src || "";
+        const fallbackImage =
+          button.closest(".project-card")?.querySelector("img")?.src || "";
         if (!previewUrl) return;
         openPreviewModal(previewUrl, projectTitle, fallbackImage);
       });
@@ -440,10 +465,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const emailAddress = emailInput.value.trim();
       const subject = encodeURIComponent("Portfolio newsletter subscription");
       const body = encodeURIComponent(
-        `Please add ${emailAddress} to Solomon Adiele's portfolio update list.`
+        `Please add ${emailAddress} to Solomon Adiele's portfolio update list.`,
       );
 
-      feedback.textContent = "Opening your email app to confirm subscription...";
+      feedback.textContent =
+        "Opening your email app to confirm subscription...";
       window.location.href = `mailto:solomonadiele1@gmail.com?subject=${subject}&body=${body}`;
       form.reset();
     });
@@ -458,7 +484,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!feedback) return;
       if (!form.checkValidity()) {
-        feedback.textContent = "Please complete all required project details first.";
+        feedback.textContent =
+          "Please complete all required project details first.";
         form.reportValidity();
         return;
       }
@@ -502,9 +529,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const apiResult = await submitProjectBriefToApi(briefRecord);
-        const storedBrief = apiResult.brief && typeof apiResult.brief === "object"
-          ? apiResult.brief
-          : briefRecord;
+        const storedBrief =
+          apiResult.brief && typeof apiResult.brief === "object"
+            ? apiResult.brief
+            : briefRecord;
         saveProjectBrief(storedBrief);
         form.reset();
 
@@ -618,36 +646,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const fieldGridElement = document.createElement("div");
         fieldGridElement.className = "brief-item-grid";
-        fieldGridElement.appendChild(createBriefField("Email", brief.email || "Not provided"));
         fieldGridElement.appendChild(
-          createBriefField("Company", brief.company || "Not provided")
+          createBriefField("Email", brief.email || "Not provided"),
         );
         fieldGridElement.appendChild(
-          createBriefField("Project Type", brief.projectType || "Not provided")
+          createBriefField("Company", brief.company || "Not provided"),
         );
         fieldGridElement.appendChild(
-          createBriefField("Budget", brief.budgetRange || "Not provided")
+          createBriefField("Project Type", brief.projectType || "Not provided"),
         );
         fieldGridElement.appendChild(
-          createBriefField("Timeline", brief.timeline || "Not provided")
+          createBriefField("Budget", brief.budgetRange || "Not provided"),
+        );
+        fieldGridElement.appendChild(
+          createBriefField("Timeline", brief.timeline || "Not provided"),
         );
         fieldGridElement.appendChild(
           createBriefField(
             "Preferred Contact",
-            brief.preferredContact || "Not provided"
-          )
+            brief.preferredContact || "Not provided",
+          ),
         );
         fieldGridElement.appendChild(
           createBriefField(
             "Must-Have Features",
-            brief.mustHaveFeatures || "Not provided"
-          )
+            brief.mustHaveFeatures || "Not provided",
+          ),
         );
         fieldGridElement.appendChild(
-          createBriefField("Reference URL", brief.referenceUrl || "Not provided", true)
+          createBriefField(
+            "Reference URL",
+            brief.referenceUrl || "Not provided",
+            true,
+          ),
         );
         fieldGridElement.appendChild(
-          createBriefField("Project Goals", brief.goals || "Not provided")
+          createBriefField("Project Goals", brief.goals || "Not provided"),
         );
 
         itemElement.appendChild(headElement);
@@ -666,15 +700,49 @@ document.addEventListener("DOMContentLoaded", () => {
       briefClearBtn.textContent = "Clear Local Cache";
       briefClearBtn.addEventListener("click", () => {
         const shouldClear = window.confirm(
-          "Clear locally cached briefs from this browser?"
+          "Clear locally cached briefs from this browser?",
         );
         if (!shouldClear) return;
         setStoredProjectBriefs([]);
-        briefBoardStatus.textContent = "Local cache cleared. Reloading live dashboard...";
+        briefBoardStatus.textContent =
+          "Local cache cleared. Reloading live dashboard...";
         renderBriefBoard();
       });
     }
 
     renderBriefBoard();
+  }
+
+  // Initialize carousel
+  const initCarousel = () => {
+    const carouselImages = document.querySelectorAll(".carousel-image");
+    if (carouselImages.length === 0) return;
+
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+      carouselImages.forEach((img, idx) => {
+        if (idx === index) {
+          img.classList.add("active");
+        } else {
+          img.classList.remove("active");
+        }
+      });
+    };
+
+    const rotateCarousel = () => {
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      showImage(currentIndex);
+    };
+
+    // Rotate image every 3 seconds
+    setInterval(rotateCarousel, 3000);
+  };
+
+  // Initialize carousel when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCarousel);
+  } else {
+    initCarousel();
   }
 });
