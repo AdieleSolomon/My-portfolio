@@ -715,28 +715,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize carousel
   const initCarousel = () => {
-    const carouselImages = document.querySelectorAll(".carousel-image");
-    if (carouselImages.length === 0) return;
+    const carouselCards = document.querySelectorAll(".carousel-card");
+    if (carouselCards.length === 0) return;
 
-    let currentIndex = 0;
+    // Initialize each carousel independently
+    carouselCards.forEach((card) => {
+      const images = card.querySelectorAll(".carousel-image");
+      if (images.length === 0) return;
 
-    const showImage = (index) => {
-      carouselImages.forEach((img, idx) => {
-        if (idx === index) {
-          img.classList.add("active");
-        } else {
-          img.classList.remove("active");
-        }
-      });
-    };
+      let currentIndex = 0;
 
-    const rotateCarousel = () => {
-      currentIndex = (currentIndex + 1) % carouselImages.length;
-      showImage(currentIndex);
-    };
+      const showImage = (index) => {
+        images.forEach((img, idx) => {
+          if (idx === index) {
+            img.classList.add("active");
+          } else {
+            img.classList.remove("active");
+          }
+        });
+      };
 
-    // Rotate image every 3 seconds
-    setInterval(rotateCarousel, 3000);
+      const rotateCarousel = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      };
+
+      // Rotate image every 3 seconds for this carousel
+      setInterval(rotateCarousel, 3000);
+    });
   };
 
   // Initialize carousel when DOM is ready
