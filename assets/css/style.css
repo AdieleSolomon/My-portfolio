@@ -185,8 +185,11 @@ a {
 
 .brand-logo {
   width: auto;
-  height: clamp(44px, 8vw, 62px);
+  height: clamp(52px, 9.5vw, 76px);
   object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4))
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5)) brightness(1.2) contrast(1.15);
+  opacity: 1;
 }
 
 .main-nav {
@@ -1756,10 +1759,12 @@ h2 {
 
 .footer-brand-logo {
   width: auto;
-  height: clamp(42px, 7.2vw, 64px);
+  height: clamp(50px, 8.5vw, 76px);
   margin-bottom: 0;
   object-fit: contain;
   flex: 0 0 auto;
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.3))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)) brightness(1.18) contrast(1.12);
 }
 
 .page-head-logo {
@@ -1951,7 +1956,8 @@ h3 {
 }
 
 .brand-logo {
-  filter: drop-shadow(0 6px 14px rgba(0, 143, 207, 0.22));
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4))
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)) brightness(1.2) contrast(1.15);
 }
 
 .main-nav a,
@@ -2411,11 +2417,11 @@ h1 span {
   }
 
   .brand-logo {
-    height: 46px;
+    height: 56px;
   }
 
   .footer-brand-logo {
-    height: 58px;
+    height: 70px;
   }
 
   .footer-brand-line {
