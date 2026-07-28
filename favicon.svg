@@ -2,12 +2,12 @@
   <title>Solomon Adiele Portfolio</title>
   <defs>
     <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#2d1b3d" />
-      <stop offset="100%" stop-color="#1a0b2e" />
+      <stop offset="0%" stop-color="#0a2348" />
+      <stop offset="100%" stop-color="#041128" />
     </linearGradient>
   </defs>
   <rect width="256" height="256" rx="48" fill="url(#bg)" />
-  <circle cx="128" cy="128" r="86" fill="none" stroke="#ffd700" stroke-width="12" />
+  <circle cx="128" cy="128" r="86" fill="none" stroke="#d8a13a" stroke-width="12" />
   <path
     d="M86 165V91h47c18 0 30 12 30 29 0 18-12 31-31 31h-24"
     fill="none"
@@ -18,7 +18,7 @@
   <path
     d="M125 121l38 44"
     fill="none"
-    stroke="#ffd700"
+    stroke="#f2d06f"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="14" />

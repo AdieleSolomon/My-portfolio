@@ -1,4 +1,4 @@
-const VERSION = "v9";
+const VERSION = "v11";
 const STATIC_CACHE = `portfolio-static-${VERSION}`;
 const DYNAMIC_CACHE = `portfolio-dynamic-${VERSION}`;
 const OFFLINE_PAGE = "/offline.html";
