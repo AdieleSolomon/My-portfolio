@@ -39,6 +39,14 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", registerServiceWorker);
 }
 
+const shouldAutoPrintCv =
+  new URLSearchParams(window.location.search).get("print") === "1";
+if (shouldAutoPrintCv) {
+  window.addEventListener("load", () => {
+    window.setTimeout(() => window.print(), 400);
+  });
+}
+
 const PROJECT_BRIEF_STORAGE_KEY = "solobest_project_briefs";
 const PROJECT_BRIEF_STORAGE_LIMIT = 300;
 const PROJECT_BRIEF_API_ENDPOINT = "/api/project-briefs";
@@ -225,6 +233,120 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => observer.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add("in"));
+  }
+
+  const downloadCvBtn = document.getElementById("downloadCvBtn");
+  const cvDownloadModal = document.getElementById("cvDownloadModal");
+  const cvDownloadClose = document.getElementById("cvDownloadClose");
+  const cvPinForm = document.getElementById("cvPinForm");
+  const cvPinInput = document.getElementById("cvPinInput");
+  const cvPinError = document.getElementById("cvPinError");
+  const cvDownloadLinkContainer = document.getElementById(
+    "cvDownloadLinkContainer",
+  );
+  const cvDownloadBackdrop = document.querySelector(".cv-download-backdrop");
+  const downloadPdfBtn = document.getElementById("downloadPdfBtn");
+  const downloadDocxBtn = document.getElementById("downloadDocxBtn");
+  const CORRECT_PIN = "6134";
+
+  const downloadCvAsset = (assetPath, filename) => {
+    const tempLink = document.createElement("a");
+    tempLink.href = new URL(assetPath, window.location.href).href;
+    tempLink.download = filename;
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+  };
+
+  if (downloadCvBtn && cvDownloadModal) {
+    const closeCvModal = () => {
+      cvDownloadModal.style.display = "none";
+      cvDownloadModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      if (cvPinForm) cvPinForm.style.display = "";
+      if (cvDownloadLinkContainer) {
+        cvDownloadLinkContainer.classList.remove("is-visible");
+      }
+      if (cvPinInput) cvPinInput.value = "";
+      if (cvPinError) cvPinError.textContent = "";
+    };
+
+    downloadCvBtn.addEventListener("click", () => {
+      cvDownloadModal.style.display = "flex";
+      cvDownloadModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      if (cvPinInput) cvPinInput.focus();
+    });
+
+    if (cvDownloadClose) {
+      cvDownloadClose.addEventListener("click", closeCvModal);
+    }
+
+    if (cvDownloadBackdrop) {
+      cvDownloadBackdrop.addEventListener("click", closeCvModal);
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        cvDownloadModal.getAttribute("aria-hidden") === "false"
+      ) {
+        closeCvModal();
+      }
+    });
+
+    if (downloadPdfBtn) {
+      downloadPdfBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (!cvDownloadLinkContainer?.classList.contains("is-visible")) {
+          if (cvPinError) {
+            cvPinError.textContent = "Please enter the correct PIN first.";
+          }
+          return;
+        }
+        downloadCvAsset(
+          "assets/documents/Solomon-Adiele-CV.pdf",
+          "Solomon-Adiele-CV.pdf",
+        );
+      });
+    }
+
+    if (downloadDocxBtn) {
+      downloadDocxBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (!cvDownloadLinkContainer?.classList.contains("is-visible")) {
+          if (cvPinError) {
+            cvPinError.textContent = "Please enter the correct PIN first.";
+          }
+          return;
+        }
+        downloadCvAsset(
+          "assets/documents/Solomon_Adiele_CV.docx",
+          "Solomon_Adiele_CV.docx",
+        );
+      });
+    }
+
+    if (cvPinForm) {
+      cvPinForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (cvPinInput && cvPinInput.value === CORRECT_PIN) {
+          if (cvPinError) cvPinError.textContent = "";
+          if (cvPinForm) cvPinForm.style.display = "none";
+          if (cvDownloadLinkContainer) {
+            cvDownloadLinkContainer.classList.add("is-visible");
+          }
+        } else {
+          if (cvPinError) {
+            cvPinError.textContent = "Incorrect PIN. Please try again.";
+          }
+          if (cvPinInput) {
+            cvPinInput.value = "";
+            cvPinInput.focus();
+          }
+        }
+      });
+    }
   }
 
   const backToTopButton = document.getElementById("backToTop");

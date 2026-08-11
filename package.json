@@ -1,7 +1,13 @@
 {
+  "scripts": {
+    "generate:cv": "node scripts/generate-cv-assets.js"
+  },
   "dependencies": {
     "fs": "^0.0.1-security",
     "googleapis": "^166.0.0",
     "twilio": "^5.12.2"
+  },
+  "devDependencies": {
+    "docx": "^9.7.1"
   }
 }

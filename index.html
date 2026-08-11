@@ -336,13 +336,9 @@
                 rel="noopener noreferrer"
                 >View CV Page</a
               >
-              <a
-                class="btn btn-ghost"
-                href="cv-download.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Download CV</a
-              >
+              <button class="btn btn-ghost" id="downloadCvBtn">
+                Download CV
+              </button>
             </div>
           </div>
         </div>
@@ -594,9 +590,7 @@
                   decoding="async" />
               </a>
               <h3>Promotional Flyer</h3>
-              <p>
-                An engaging and informative flyer for promotional purposes.
-              </p>
+              <p>An engaging and informative flyer for promotional purposes.</p>
             </article>
             <article class="card">
               <a
@@ -613,7 +607,8 @@
               </a>
               <h3>Solobext Design Logo</h3>
               <p>
-                A modern and clean logo recreation for the Solobext Design brand.
+                A modern and clean logo recreation for the Solobext Design
+                brand.
               </p>
             </article>
           </div>
@@ -1094,7 +1089,8 @@
           </div>
           <p>
             <a href="mailto:solomonadiele1@gmail.com" aria-label="Email"
-              ><i class="fas fa-envelope" aria-hidden="true"></i>solomonadiele1@gmail.com</a
+              ><i class="fas fa-envelope" aria-hidden="true"></i
+              >solomonadiele1@gmail.com</a
             >
             |
             <a href="tel:+2348069383370" aria-label="Phone"
@@ -1160,6 +1156,43 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/script.js?v=20260309m2"></script>
+    <div id="cvDownloadModal" class="cv-download-modal" aria-hidden="true">
+      <div class="cv-download-backdrop" data-close-modal></div>
+      <div class="cv-download-content">
+        <button
+          class="cv-download-close"
+          id="cvDownloadClose"
+          aria-label="Close">
+          &times;
+        </button>
+        <h3>Download CV</h3>
+        <p>Please enter the PIN to download the CV.</p>
+        <form id="cvPinForm">
+          <label class="field">
+            <span>PIN Code *</span>
+            <input
+              type="password"
+              id="cvPinInput"
+              required
+              autocomplete="off" />
+          </label>
+          <button type="submit" class="btn">Submit</button>
+          <p id="cvPinError" class="error-message" aria-live="polite"></p>
+        </form>
+        <div id="cvDownloadLinkContainer" class="cv-download-link-container">
+          <p>PIN correct. You can now download the CV.</p>
+          <div class="cv-download-actions">
+            <button type="button" id="downloadPdfBtn" class="btn">
+              Download PDF
+            </button>
+            <button type="button" id="downloadDocxBtn" class="btn btn-ghost">
+              Download DOCX
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js?v=20260811docx"></script>
   </body>
 </html>

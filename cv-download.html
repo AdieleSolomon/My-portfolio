@@ -352,9 +352,9 @@
             <i class="fas fa-download"></i>
             Download CV as PDF
         </button>
-        <button class="print-btn" onclick="window.print()">
-            <i class="fas fa-print"></i>
-            Print CV
+        <button class="print-btn" onclick="downloadDOCX()">
+            <i class="fas fa-file-word"></i>
+            Download CV as DOCX
         </button>
     </div>
     
@@ -563,8 +563,8 @@
         function downloadCV() {
             // Create a temporary link to trigger download
             const link = document.createElement('a');
-            link.href = './assets/documents/Solomon-Adiele-CV.docx'; // Update this path to your actual CV file
-            link.download = 'Solomon-Adiele-CV.docx';
+            link.href = './assets/documents/Solomon-Adiele-CV.pdf';
+            link.download = 'Solomon-Adiele-CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -572,11 +572,22 @@
             // Show success message
             alert('CV download started! If the download doesn\'t start automatically, please check your downloads folder.');
         }
+
+        function downloadDOCX() {
+            const link = document.createElement('a');
+            link.href = './assets/documents/Solomon_Adiele_CV.docx';
+            link.download = 'Solomon_Adiele_CV.docx';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            alert('CV download started! If the download doesn\'t start automatically, please check your downloads folder.');
+        }
         
         // Alternative method using fetch (if you want to handle errors)
         async function downloadCVAlternative() {
             try {
-                const response = await fetch('./assets/documents/Solomon-Adiele-CV.docx');
+                const response = await fetch('./assets/documents/Solomon-Adiele-CV.pdf');
                 if (!response.ok) {
                     throw new Error('CV file not found');
                 }
@@ -584,7 +595,7 @@
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = 'Solomon-Adiele-CV.docx';
+                link.download = 'Solomon-Adiele-CV.pdf';
                 document.body.appendChild(link);
                 link.click();
                 window.URL.revokeObjectURL(url);
